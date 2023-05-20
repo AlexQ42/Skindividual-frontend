@@ -1,0 +1,128 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Sora', sans-serif;
+  font-size: 22px;
+}
+
+.App {
+  text-align: left;
+  padding: 20px;
+}
+
+.App>p{
+  padding-bottom: 20px;
+}
+
+.eventBox {
+  border: 0;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px darkgrey;
+  text-align: left;
+  width: max-content;
+}
+
+.eventBoxContent {
+  width: 20em;
+  padding: 25px;
+}
+
+
+.flexSpaceBetween {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+.flexLeft {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: left;
+}
+
+
+.eventBox > .skinTypeTag {
+  margin-top: 10px;
+}
+
+.priceEventBox {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.priceEventBox > span {
+  font-weight: normal;
+  font-size: 20px;
+}
+
+.imageTest {
+  height: inherit;
+  width: 10em;
+  border: 1px transparent;
+  border-radius: 10px 0 0 10px;
+  background-image: url("https://img.freepik.com/free-photo/woman-home-applying-cream-mask_1303-24618.jpg?w=2000&t=st=1684417040~exp=1684417640~hmac=01266b91a9c6f9cd1c2f28008ee326adb6c6ce03a324a48c23867a6dbf752a57");
+  background-size: cover;
+  background-position: center;
+}
+
+.reviewSmall {
+  border: 1px transparent;
+  border-radius: 10px;
+  background-color: #B6C7B9;
+  display: inline;
+  padding: 5px 10px;
+}
+.reviewSmall > span {
+  color: white;
+}
+
+.skinTypeTag {
+  font-size: 18px;
+  border: 1px transparent;
+  border-radius: 10px;
+  background-color: #c9bde5;
+  alignment: right;
+  padding: 1px 5px;
+  width: max-content;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+h1 {
+  font-size: 50px;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 35px;
+  font-weight: bold;
+}
+
+
+h3 {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+h4 {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.textRight{
+  text-align: right;
+}
+
+
