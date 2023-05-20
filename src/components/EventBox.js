@@ -1,28 +1,16 @@
-import axiosInstance from "./api/AxiosInstance";
 import {useEffect, useState} from "react";
 
-const EventBox = () => {
+const EventBox = ({ eventObject }) => {
     const [resultEvent, setResultEvent] = useState([]);
 
-
     useEffect(() => {
-        const getEvent = async () =>
-        {
-            try {
-                const response = await axiosInstance.get('/events/2');
-                console.log(response);
-                setResultEvent(response.data);
 
-            } catch (error) {
-                console.error(error);
-                setResultEvent(null)
-            }
-        }
-        getEvent();
-    }, []);
+        setResultEvent(eventObject);
+
+    }, [eventObject]);
 
 
-    console.log(resultEvent);
+
     return <div className="eventBox flexLeft">
         <div className="imageTest"></div>
         <div className="eventBoxContent">
