@@ -1,13 +1,13 @@
 
 
-const About =  () => {
+const Imprint =  () => {
 
     return (
-        <div id="aboutPage">
+        <div id="imprintPage">
             <input id="inputEmail" type="text"/>
             <input id="inputPassword" type="password"/>
         </div>
     );
 }
 
-export default About;
+export default Imprint;

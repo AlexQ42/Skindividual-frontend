@@ -1,13 +1,13 @@
 
 
-const About =  () => {
+const Login =  () => {
 
     return (
-        <div id="aboutPage">
+        <div id="loginPage">
             <input id="inputEmail" type="text"/>
             <input id="inputPassword" type="password"/>
         </div>
     );
 }
 
-export default About;
+export default Login;
