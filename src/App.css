@@ -128,10 +128,13 @@ h4 {
 }
 
 #logo {
-  font-size: 3rem;
+  font-size: 2rem;
   color: black;
   text-decoration: none;
+}
 
+#logo:hover {
+  color: rgb(61, 61, 61);
 }
 
 #footer {
@@ -172,6 +175,11 @@ h4 {
 
   .imageTest {
     width: 20rem;
+  }
+
+  #logo
+  {
+    font-size: 4rem;
   }
 }
 
