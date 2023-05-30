@@ -3,18 +3,12 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Sora', sans-serif;
-  font-size: 22px;
+  font-size: 1.5vw;
 }
 
-.App {
-  text-align: left;
-  padding: 20px;
+p {
+  margin: 0;
 }
-
-.App>p{
-  padding-bottom: 20px;
-}
-
 
 .flexSpaceBetween {
   display: flex;
@@ -38,16 +32,16 @@
 
 .eventBox {
   border: 0;
-  border-radius: 10px;
+  border-radius: 0.8vw;
   box-shadow: 2px 2px 5px darkgrey;
   text-align: left;
   width: max-content;
-  margin: 1em;
+  margin: 1rem;
 }
 
 .eventBoxContent {
-  width: 20em;
-  padding: 25px;
+  width: 20rem;
+  padding: 1rem;
 }
 
 .eventBox > .skinTypeTag {
@@ -55,20 +49,20 @@
 }
 
 .priceEventBox {
-  font-size: 22px;
   font-weight: bold;
+  margin: 0;
 }
 
 .priceEventBox > span {
   font-weight: normal;
-  font-size: 20px;
+  margin: 0;
 }
 
 .imageTest {
   height: inherit;
-  width: 10em;
+  width: 10rem;
   border: 1px transparent;
-  border-radius: 10px 0 0 10px;
+  border-radius: 0.8vw 0 0 0.8vw;
   background-image: url("https://img.freepik.com/free-photo/woman-home-applying-cream-mask_1303-24618.jpg?w=2000&t=st=1684417040~exp=1684417640~hmac=01266b91a9c6f9cd1c2f28008ee326adb6c6ce03a324a48c23867a6dbf752a57");
   background-size: cover;
   background-position: center;
@@ -76,23 +70,25 @@
 
 .reviewSmall {
   border: 1px transparent;
-  border-radius: 10px;
+  border-radius: 0.8vw;
   background-color: #B6C7B9;
   display: inline;
-  padding: 5px 10px;
+  padding: 0.4vw 0.8vw;
 }
 .reviewSmall > span {
   color: white;
+  font-size: inherit;
 }
 
 .skinTypeTag {
-  font-size: 18px;
+  font-size: 1.2vw;
   border: 1px transparent;
-  border-radius: 10px;
+  border-radius: 0.8vw;
   background-color: #c9bde5;
   alignment: right;
   padding: 1px 5px;
   width: max-content;
+  height: max-content;
 }
 
 .App-header {
@@ -123,7 +119,7 @@ h3 {
 }
 
 h4 {
-  font-size: 22px;
+  font-size: 1.5vw;
   font-weight: bold;
 }
 
@@ -131,4 +127,33 @@ h4 {
   text-align: right;
 }
 
+#footer {
+  height: 4vw;
+  text-align: center;
+  background-color: #B6C7B9;
+}
+
+
+@media  (max-width: 600px) {
+
+  .flexEventList {
+    flex-direction: column;
+  }
+
+  p, h4, .priceEventBox, .priceEventBox > span {
+    font-size: 3vw;
+  }
+
+  .skinTypeTag {
+    font-size: 2.4vw;
+  }
+
+  .eventBoxContent {
+    width: 40rem;
+  }
+
+  .imageTest {
+    width: 20rem;
+  }
+}
 

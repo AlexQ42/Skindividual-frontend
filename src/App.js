@@ -1,17 +1,17 @@
 import './App.css';
-import EventBoxList from "./components/EventBoxList";
+import Start from "./pages/Start";
 
 function App() {
   return (
     <div className="App">
-        <div className="Table">
-            <h1>Skindividual</h1>
-            <EventBoxList query="/events?page=1&per-page=6"/>
+        <h1 id="header">Skindividual</h1>
+        <div id="content container-fluid">
+            <Start/>
         </div>
+        <p id="footer">footer</p>
     </div>
   );
 }
 
 export default App;
-
 

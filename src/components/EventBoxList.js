@@ -16,7 +16,7 @@ const EventBoxList = ({query}) => {
 
 
 
-    return <div className="eventBoxList">
+    return <div className="eventBoxList row">
         <div className="flexEventList">
             {
                 resultEventList !== null ? resultEventList.map((singleEvent, i) =>

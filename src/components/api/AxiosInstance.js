@@ -6,4 +6,6 @@ const axiosInstance = axios.create({
     headers: {'Accept': 'application/json'}
 });
 
+axiosInstance.defaults.withCredentials = true;
+
 export default axiosInstance;

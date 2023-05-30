@@ -33,7 +33,7 @@ const EventBox = ({ eventObject }) => {
             <div className="flexSpaceBetween">
                 <div>
                     <h4>{resultEvent === null? "name" : resultEvent.name}</h4>
-                    <p>{resultEvent === null? "place" : resultEvent.place}</p>
+                    <p className="text-start">{resultEvent === null? "place" : resultEvent.place}</p>
                     <p>{resultEvent === null? "date" : new Date(resultEvent.date).toLocaleDateString()}</p>
                 </div>
                 <div><p className="reviewSmall"><span>&#9733;</span> {resultEvent === null || resultEvent.rating === null? "0" : parseFloat(resultEvent.rating).toFixed(1)}</p></div>
