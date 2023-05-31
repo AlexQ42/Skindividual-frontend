@@ -1,4 +1,4 @@
-import {login} from "../components/api/LoginManager";
+import {login} from "../api/LoginManager";
 import EventBoxList from "../components/EventBoxList";
 
 const Start =  () => {

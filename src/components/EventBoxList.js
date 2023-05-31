@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react";
 import EventBox from "./EventBox";
-import {getEventList} from "./api/EventListAccessor";
+import {getEventList} from "../api/EventListAccessor";
 
 const EventBoxList = ({query}) => {
     const [resultEventList, setResultEventList] = useState([]);
