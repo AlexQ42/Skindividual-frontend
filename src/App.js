@@ -18,18 +18,20 @@ function App() {
     <div className="App">
         <BrowserRouter>
             <Header/>
-            <Routes className="content container-fluid">
-                <Route path="/" element={<Start />}></Route>
-                <Route path="/about" element={<About />}></Route>
-                <Route path="/account" element={<Account/>}></Route>
-                <Route path="/cart" element={<Cart />}></Route>
-                <Route path="/test" element={<Test />}></Route>
-                <Route path="/checkout" element={<Checkout />}></Route>
-                <Route path="/event" element={<Event />}></Route>
-                <Route path="/login" element={<Login />}></Route>
-                <Route path="/register" element={<Register />}></Route>
-                <Route path="/imprint" element={<Imprint />}></Route>
-            </Routes>
+            <div className="content">
+                <Routes className="content container-fluid">
+                    <Route path="/" element={<Start />}></Route>
+                    <Route path="/about" element={<About />}></Route>
+                    <Route path="/account" element={<Account/>}></Route>
+                    <Route path="/cart" element={<Cart />}></Route>
+                    <Route path="/test" element={<Test />}></Route>
+                    <Route path="/checkout" element={<Checkout />}></Route>
+                    <Route path="/event" element={<Event />}></Route>
+                    <Route path="/login" element={<Login />}></Route>
+                    <Route path="/register" element={<Register />}></Route>
+                    <Route path="/imprint" element={<Imprint />}></Route>
+                </Routes>
+            </div>
             <Footer/>
         </BrowserRouter>
     </div>
