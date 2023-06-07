@@ -6,6 +6,7 @@ const EventBoxList = ({query}) => {
     const [resultEventList, setResultEventList] = useState([]);
 
 
+
     useEffect(() => {
         async function fetchData()
         {
@@ -21,10 +22,9 @@ const EventBoxList = ({query}) => {
             {
                 resultEventList !== null ? resultEventList.map((singleEvent, i) =>
                 {
-                    console.log(singleEvent);
                     return <EventBox key={i} eventObject={singleEvent}></EventBox>
                 })
-                    : <p>no Elements</p>
+                    : <p>Die Liste ist leer.</p>
             }
         </div>
     </div>

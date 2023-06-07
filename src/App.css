@@ -259,6 +259,20 @@ h4 {
   background-size: cover;
 }
 
+.dropdown {
+  display: inline;
+  width: 16vw;
+  box-shadow: none;
+  border-radius: 0.8vw;
+  font-family: 'Sora', sans-serif;
+  font-size: 1.5vw;
+}
+
+.dropdown:focus {
+  box-shadow: none;
+  border-color: #B6C7B9;
+}
+
 @media  (max-width: 600px) {
 
   .flexEventList {
