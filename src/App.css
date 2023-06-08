@@ -54,6 +54,16 @@ p {
   margin-bottom: 1rem;
 }
 
+.eventBoxLink {
+  color: black;
+  text-decoration: none;
+}
+
+.eventBoxLink:hover {
+  color: black;
+  text-decoration: none;
+}
+
 .eventBoxContent {
   width: 20rem;
   padding: 1rem;
@@ -81,6 +91,17 @@ p {
   background-image: url("https://img.freepik.com/free-photo/woman-home-applying-cream-mask_1303-24618.jpg?w=2000&t=st=1684417040~exp=1684417640~hmac=01266b91a9c6f9cd1c2f28008ee326adb6c6ce03a324a48c23867a6dbf752a57");
   background-size: cover;
   background-position: center;
+}
+
+.eventPageImage {
+  width: 45vw;
+  margin-right: 2vw;
+  margin-bottom: 2vw;
+}
+
+.eventPageSubTitle {
+  margin-bottom: 0.2vw;
+  margin-top: 1.5vw;
 }
 
 .reviewSmall {
@@ -271,6 +292,35 @@ h4 {
 .dropdown:focus {
   box-shadow: none;
   border-color: #B6C7B9;
+}
+
+.skinTypeFilter {
+  margin: 1vw 0;
+  background-color: #EDEDED;
+  border-radius: 0.8vw;
+  display: flex;
+  justify-content: space-between;
+}
+
+.skinTypeFilterButton {
+  border-radius: 0.8vw;
+  border-color: transparent;
+  color: black;
+  font-weight: bold;
+  background-color: #EDEDED;
+  width: 15vw;
+}
+
+.skinTypeFilterButton:hover {
+  color: black;
+}
+
+.skinTypeFilterButton:checked {
+  color: black;
+}
+
+.filtersAndSearch {
+  margin: 1vw 0;
 }
 
 @media  (max-width: 600px) {

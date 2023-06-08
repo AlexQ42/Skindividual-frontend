@@ -26,7 +26,7 @@ function App() {
                     <Route path="/cart" element={<Cart />}></Route>
                     <Route path="/test" element={<Test />}></Route>
                     <Route path="/checkout" element={<Checkout />}></Route>
-                    <Route path="/event" element={<Event />}></Route>
+                    <Route path="/events/:id" element={<Event />}></Route>
                     <Route path="/login" element={<Login />}></Route>
                     <Route path="/register" element={<Register />}></Route>
                     <Route path="/imprint" element={<Imprint />}></Route>
