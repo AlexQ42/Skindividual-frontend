@@ -1,5 +1,6 @@
 import EventBoxList from "./EventBoxList";
 import {useEffect, useRef, useState} from "react";
+import search from "../assets/search.svg";
 
 const EventListFilterContainer = () => {
 
@@ -50,21 +51,23 @@ const EventListFilterContainer = () => {
         <div className="eventListFilterContainer">
             <div className="skinTypeFilter">
                 <input ref={skinTypeAllSelectButton} type="radio" className="btn-check" name="options" id="option1" autoComplete="off" onChange={e => handleSkinTypeInput("")}></input>
-                <label className="btn btn-secondary skinTypeFilterButton" htmlFor="option1">alle</label>
+                <label className="btn btn-secondary skinTypeFilterButtonAll" htmlFor="option1">alle</label>
                 <input type="radio" className="btn-check" name="options" id="option2" autoComplete="off" onChange={e => handleSkinTypeInput("normal")}></input>
-                <label className="btn btn-secondary skinTypeFilterButton" htmlFor="option2" >normal</label>
+                <label className="btn btn-secondary skinTypeFilterButtonNormal" htmlFor="option2" >normal</label>
                 <input type="radio" className="btn-check" name="options" id="option3" autoComplete="off" onChange={e => setSkinTypeInput("oily")}></input>
-                <label className="btn btn-secondary skinTypeFilterButton" htmlFor="option3" >ölig</label>
+                <label className="btn btn-secondary skinTypeFilterButtonOily" htmlFor="option3" >ölig</label>
                 <input type="radio" className="btn-check" name="options" id="option4" autoComplete="off" onChange={e => setSkinTypeInput("combination")}></input>
-                <label className="btn btn-secondary skinTypeFilterButton" htmlFor="option4" >Mischhaut</label>
+                <label className="btn btn-secondary skinTypeFilterButtonCombination" htmlFor="option4" >Mischhaut</label>
                 <input type="radio" className="btn-check" name="options" id="option5" autoComplete="off" onChange={e => setSkinTypeInput("dry")}></input>
-                <label className="btn btn-secondary skinTypeFilterButton" htmlFor="option5" >trocken</label>
+                <label className="btn btn-secondary skinTypeFilterButtonDry" htmlFor="option5" >trocken</label>
                 <input type="radio" className="btn-check" name="options" id="option6" autoComplete="off" onChange={() => setSkinTypeInput("sensitive")}></input>
-                <label className="btn btn-secondary skinTypeFilterButton" htmlFor="option6">sensibel</label>
+                <label className="btn btn-secondary skinTypeFilterButtonSensitive" htmlFor="option6">sensibel</label>
             </div>
             <div className="filtersAndSearch">
-                <input className="search" ref={searchField} type="search" onInput={e => setSearchInput(e.currentTarget.value)}/>
-                <button onClick={handleApply}>Suchen</button>
+                <div className="searchContainer">
+                    <input className="search" ref={searchField} type="search" onInput={e => setSearchInput(e.currentTarget.value)}/>
+                    <button className="button searchButton" onClick={handleApply}><img src={search} alt="suchen"></img></button>
+                </div>
                 <select className="form-select dropdown" aria-label="Select event type" onChange={(e) => setEventTypeInput(e.target.value)}>
                     <option defaultValue="" value="">Eventtyp</option>
                     <option value="treatment">Behandlung</option>
@@ -80,13 +83,13 @@ const EventListFilterContainer = () => {
                     <option value="Nürnberg">Nürnberg</option>
                 </select>
                 <select className="form-select dropdown" aria-label="Select sorting" onChange={(e) => setSortInput(e.target.value)}>
-                    <option defaultValue="" value="">Sortieren nach</option>
+                    <option defaultValue="" value="">Sortierung</option>
                     <option value="reviews">Bewertung</option>
                     <option value="date">Termin</option>
                     <option value="price">Preis</option>
                 </select>
-                <button onClick={handleApply}>Anwenden</button>
-                <button onClick={handleResetFilters}>Zurücksetzen</button>
+                <button className="button" onClick={handleApply}>Anwenden</button>
+                <button className="button" onClick={handleResetFilters}>Zurücksetzen</button>
             </div>
             <EventBoxList className="container-fluid" query={query}/>
         </div>

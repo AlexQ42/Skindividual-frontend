@@ -16,14 +16,12 @@ const EventBoxList = ({query}) => {
     }, [query]);
 
 
-
     return <div className="eventBoxList row">
         <div className="flexEventList">
-            {
-                resultEventList !== null ?
-                    resultEventList.map((singleEvent, i) => <EventBox key={i} eventObject={singleEvent}></EventBox>)
-                    : <p>Die Liste ist leer.</p>
-            }
+            {(resultEventList !== null && resultEventList.length !== 0)
+                ? resultEventList.map((singleEvent, i) => <EventBox key={i} eventObject={singleEvent}></EventBox>)
+                : <p className="emptyListText">Keine Ergebnisse</p>}
+
         </div>
     </div>
 }
