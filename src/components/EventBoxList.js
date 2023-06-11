@@ -11,6 +11,7 @@ const EventBoxList = ({query}) => {
         async function fetchData()
         {
             setResultEventList(await getEventList(query));
+            console.log(resultEventList.current_page);  //TODO is undefined!
         }
         fetchData();
     }, [query]);

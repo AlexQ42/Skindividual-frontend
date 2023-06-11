@@ -8,7 +8,7 @@ const Start =  () => {
             <Carousel/>
             <h3 className="container-fluid">Veranstaltungen</h3>
             <div className="container-fluid">
-                <p>Wähle deinen Hauttyp:</p>
+                <p>Filter:</p>
             </div>
             <EventListFilterContainer />
         </div>

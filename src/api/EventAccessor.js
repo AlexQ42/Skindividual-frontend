@@ -4,7 +4,7 @@ export async function getEventList(query)
 {
     try {
         const response = await axiosInstance.get(query);
-        return await response.data;
+        return await response.data.data;
 
     } catch (error) {
         console.error(error);

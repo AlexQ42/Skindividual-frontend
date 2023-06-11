@@ -1,6 +1,7 @@
 import EventBoxList from "./EventBoxList";
 import {useEffect, useRef, useState} from "react";
 import search from "../assets/search.svg";
+import {wait} from "@testing-library/user-event/dist/utils";
 
 const EventListFilterContainer = () => {
 
@@ -50,17 +51,17 @@ const EventListFilterContainer = () => {
     return (
         <div className="eventListFilterContainer">
             <div className="skinTypeFilter">
-                <input ref={skinTypeAllSelectButton} type="radio" className="btn-check" name="options" id="option1" autoComplete="off" onChange={e => handleSkinTypeInput("")}></input>
+                <input ref={skinTypeAllSelectButton} type="radio" className="btn-check" name="options" id="option1" autoComplete="off" onChange={e => {handleSkinTypeInput("");}}></input>
                 <label className="btn btn-secondary skinTypeFilterButtonAll" htmlFor="option1">alle</label>
-                <input type="radio" className="btn-check" name="options" id="option2" autoComplete="off" onChange={e => handleSkinTypeInput("normal")}></input>
+                <input type="radio" className="btn-check" name="options" id="option2" autoComplete="off" onChange={e => {handleSkinTypeInput("normal");}}></input>
                 <label className="btn btn-secondary skinTypeFilterButtonNormal" htmlFor="option2" >normal</label>
-                <input type="radio" className="btn-check" name="options" id="option3" autoComplete="off" onChange={e => setSkinTypeInput("oily")}></input>
+                <input type="radio" className="btn-check" name="options" id="option3" autoComplete="off" onChange={e => {handleSkinTypeInput("oily");}}></input>
                 <label className="btn btn-secondary skinTypeFilterButtonOily" htmlFor="option3" >ölig</label>
-                <input type="radio" className="btn-check" name="options" id="option4" autoComplete="off" onChange={e => setSkinTypeInput("combination")}></input>
+                <input type="radio" className="btn-check" name="options" id="option4" autoComplete="off" onChange={e => {handleSkinTypeInput("combination");}}></input>
                 <label className="btn btn-secondary skinTypeFilterButtonCombination" htmlFor="option4" >Mischhaut</label>
-                <input type="radio" className="btn-check" name="options" id="option5" autoComplete="off" onChange={e => setSkinTypeInput("dry")}></input>
+                <input type="radio" className="btn-check" name="options" id="option5" autoComplete="off" onChange={e => {handleSkinTypeInput("dry");}}></input>
                 <label className="btn btn-secondary skinTypeFilterButtonDry" htmlFor="option5" >trocken</label>
-                <input type="radio" className="btn-check" name="options" id="option6" autoComplete="off" onChange={() => setSkinTypeInput("sensitive")}></input>
+                <input type="radio" className="btn-check" name="options" id="option6" autoComplete="off" onChange={() => {handleSkinTypeInput("sensitive");}}></input>
                 <label className="btn btn-secondary skinTypeFilterButtonSensitive" htmlFor="option6">sensibel</label>
             </div>
             <div className="filtersAndSearch">
@@ -92,6 +93,9 @@ const EventListFilterContainer = () => {
                 <button className="button" onClick={handleResetFilters}>Zurücksetzen</button>
             </div>
             <EventBoxList className="container-fluid" query={query}/>
+            <div className="pagination">
+
+            </div>
         </div>
     )
 }
