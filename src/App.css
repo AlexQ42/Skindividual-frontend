@@ -159,6 +159,10 @@ h4 {
   font-weight: bold;
 }
 
+.headline {
+  margin: 2vw 0;
+}
+
 .textRight{
   text-align: right;
 }
@@ -294,10 +298,6 @@ h4 {
   border-color: #B6C7B9;
 }
 
-.searchContainer {
-
-}
-
 .searchButton {
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
@@ -368,7 +368,7 @@ h4 {
 }
 
 .filtersAndSearch {
-  margin: 1vw 0;
+  margin: 1vw 0 3vw 0;
   display: flex;
   justify-content: space-between;
   align-items: baseline;
