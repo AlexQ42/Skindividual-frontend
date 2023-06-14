@@ -159,6 +159,11 @@ h4 {
   font-weight: bold;
 }
 
+h5 {
+  font-size: 1.3vw;
+  font-weight: bold;
+}
+
 .textRight{
   text-align: right;
 }
@@ -408,6 +413,78 @@ h4 {
   {
     font-size: 4rem;
   }
-
 }
 
+</* Eventseite*/>
+.decrement {
+  margin-right: 0.7vw;
+}
+
+.increment {
+  margin-right: 0.7vw;
+}
+
+.inCartButton {
+  width: 30vw;
+}
+
+.amountInput {
+  margin-left: 0.7vw;
+  margin-right: 0.7vw;
+  width: 5vw;
+  text-align: center;
+  border-radius: 10px;
+  border-color: #EDEDED;
+  height: 50px;
+}
+
+.amountInCart {
+  margin-top: 1.3vw;
+}
+
+.eventDescriptionSelection {
+  margin: 1vw 0;
+  background-color: #EDEDED;
+  border-radius: 0.8vw;
+  display: flex;
+  justify-content: space-between;
+}
+
+.eventDescriptionDetail {
+  --bs-btn-active-bg: #B5C7C5;
+  --bs-btn-bg: #D9D9D9;
+  width: 31vw;
+}
+
+.eventDescriptionExpert {
+  --bs-btn-active-bg: #B5C7C5;
+  --bs-btn-bg: #D9D9D9;
+  width: 31vw;
+}
+
+.eventDescriptionFaq {
+  --bs-btn-active-bg: #B5C7C5;
+  --bs-btn-bg: #D9D9D9;
+  width: 31vw;
+}
+
+.eventDescriptionBox {
+  background: #EDEDED;
+  justify-content: space-between;
+  box-sizing: content-box;
+  border-radius: 10px;
+  padding: 3vw 20vw;
+  display: flex;
+  margin-bottom: 2vw;
+}
+
+.eventExpertImage {
+  width: 15vw;
+  height: 15vw;
+  margin-right: 2vw;
+  border-radius: 0.7vw 0vw 0vw 0.7vw;
+}
+
+.detail2{
+  margin-top: 2.5vw;
+}

@@ -4,6 +4,7 @@ import {useEffect, useRef, useState} from "react";
 import {getEventByID, getEventList} from "../api/EventAccessor";
 import imageMicroneedling from "../assets/imageMicroneedling.svg";
 import SkinTypeTag from "../components/SkinTypeTag";
+import EventDescription from "../components/EventDescription";
 
 const Event =  () => {
 
@@ -46,28 +47,33 @@ const Event =  () => {
 
     return (
         <div id="eventPage">
-            <div className="flexLeft">
+            <div className="eventPageContent flexLeft">
                 <img className="eventPageImage" src={imageMicroneedling} alt=""></img>
                 <div className="eventInfoContainer container-fluid">
                     <h2>{eventObject.name}</h2>
                     <SkinTypeTag skinType={eventObject.skinType}/>
-                    <h4 className="eventPageSubTitle">Ort:</h4>
+                    <h5 className="eventPageSubTitle">Ort:</h5>
                     <p className="text-start">{getAddress(eventObject.place)}</p>
-                    <h4 className="eventPageSubTitle">Termin:</h4>
+                    <h5 className="eventPageSubTitle">Termin:</h5>
                     <p>{new Date(eventObject.date).toLocaleDateString()}</p>
                     <div className="flexSpaceBetween">
                         <div>
-                            <h4 className="eventPageSubTitle">Freie Plätze:</h4>
+                            <h5 className="eventPageSubTitle">Freie Plätze:</h5>
                             <p className="text-start">{eventObject.availableSpots + " Plätze"}</p>
                         </div>
                         <h3 className="priceEventBox eventPageSubTitle">{eventObject.price}€ <span> pro Person</span></h3>
                     </div>
-                    <button onClick={handleDecrementTickets}>-</button>
-                    <input ref={ticketCounter} readOnly type="text" value={ticketCounterValue} min="1" max="10"/>
-                    <button onClick={handleIncrementTickets}>+</button>
-                    <button>In den Warenkorb</button>
+                    <div className="amountInCart flexSpaceBetween">
+                        <button className="button decrement" onClick={handleDecrementTickets}>-</button>
+                        <input className="amountInput" ref={ticketCounter} readOnly type="text" value={ticketCounterValue} min="1" max="10"/>
+                        <button className="button increment" onClick={handleIncrementTickets}>+</button>
+                        <button className="button inCartButton">
+                           In den Warenkorb
+                        </button>
+                    </div>
                 </div>
             </div>
+            <EventDescription/>
             <h3 className="container-fluid">Andere Kunden interessierten sich auch für:</h3>
             <EventBoxList class="container-fluid" query={"/events?skintype="+(eventObject.skinType)+"&page=1&per-page=4"}/>
         </div>
