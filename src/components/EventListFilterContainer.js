@@ -1,7 +1,7 @@
-import EventBoxList from "./EventBoxList";
 import {useEffect, useRef, useState} from "react";
 import search from "../assets/search.svg";
-import {wait} from "@testing-library/user-event/dist/utils";
+import EventBoxListContainer from "./EventBoxListContainer";
+
 
 const EventListFilterContainer = () => {
 
@@ -12,7 +12,7 @@ const EventListFilterContainer = () => {
     const [sortInput, setSortInput] = useState('');
     const [startDateInput, setStartDateInput] = useState('');
     const [endDateInput, setEndDateInput] = useState('');
-    const [query, setQuery] = useState('/events?page=1&per-page=6')
+    const [query, setQuery] = useState('')
 
     const searchField = useRef(null);
     const skinTypeAllSelectButton = useRef(null)
@@ -25,13 +25,11 @@ const EventListFilterContainer = () => {
     function handleApply()
     {
         let newQuery =
-            "/events?" +
             (searchInput !== '' ? ("search="+searchInput+"&") : "") +
             (skinTypeInput !== '' ? ("skintype="+skinTypeInput+"&") : "") +
             (eventTypeInput !== '' ? ("eventtype="+eventTypeInput+"&") : "") +
             (placeInput !== '' ? ("place="+placeInput+"&") : "") +
-            (sortInput !== '' ? ("sort="+sortInput+"&") : "") +
-            "page=1&per-page=6";
+            (sortInput !== '' ? ("sort="+sortInput+"&") : "");
         console.log(query);
         setQuery(newQuery);
     }
@@ -43,7 +41,7 @@ const EventListFilterContainer = () => {
         setPlaceInput("");
         setSearchInput("");
         setSortInput("");
-        setQuery('/events?page=1&per-page=6');
+        setQuery('');
         searchField.current.value = "";
         skinTypeAllSelectButton.current.checked = true;
     }
@@ -92,15 +90,10 @@ const EventListFilterContainer = () => {
                 <button className="button" onClick={handleApply}>Anwenden</button>
                 <button className="button" onClick={handleResetFilters}>Zurücksetzen</button>
             </div>
-            <EventBoxList className="container-fluid" query={query}/>
-            <div className="pagination">
-
-            </div>
+            <EventBoxListContainer className="container-fluid" query={query} showPagination={true} page={1} perPage={6}/>
         </div>
     )
 }
-
-// hier Paging Buttons und Filter und Suchleiste einbauen und damit die query bauen, die dann an EventBoxList übergeben wird
 
 export default EventListFilterContainer;
 

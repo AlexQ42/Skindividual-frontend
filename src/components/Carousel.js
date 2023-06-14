@@ -1,7 +1,7 @@
 import {Link} from "react-router-dom";
 
 
-const Carousel = () => {
+const Carousel = ({showButton}) => {
     return (
         <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
             <div className="carousel-inner">
@@ -9,21 +9,21 @@ const Carousel = () => {
                     <div id="carousel1" className="carouselItem">
                         <h2 className="carouselHeadline">Schönheit <br/>im Einklang mit der Natur</h2>
                         <p className="carouselSubHeadline">Wir legen Wert auf Natürlichkeit und Nachhaltigkeit</p>
-                        <Link to="/about" className="button carouselButton">Mehr über Skindividual</Link>
+                        {showButton ? <Link to="/about" className="button carouselButton">Mehr über Skindividual</Link> : ""}
                     </div>
                 </div>
                 <div className="carousel-item">
                     <div id="carousel2" className="carouselItem">
                         <h2 className="carouselHeadline"><br/>Deine Haut in guten Händen</h2>
                         <p className="carouselSubHeadline">Genieße Behandlungen von professionellen Kosmetiker:innen</p>
-                        <Link to="/about" className="button carouselButton">Mehr über Skindividual </Link>
+                        {showButton ? <Link to="/about" className="button carouselButton">Mehr über Skindividual</Link> : ""}
                     </div>
                 </div>
                 <div className="carousel-item">
                     <div id="carousel3" className="carouselItem">
                         <h2 className="carouselHeadline">Entdecke Behandlungen, <br/>die perfekt zu deinem Hauttyp passen</h2>
                         <p className="carouselSubHeadline">Skincare-Events - so individuell wie deine Haut</p>
-                        <Link to="/about" className="button carouselButton">Mehr über Skindividual</Link>
+                        {showButton ? <Link to="/about" className="button carouselButton">Mehr über Skindividual</Link> : ""}
                     </div>
                 </div>
             </div>

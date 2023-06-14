@@ -5,6 +5,7 @@ import {getEventByID, getEventList} from "../api/EventAccessor";
 import imageMicroneedling from "../assets/imageMicroneedling.svg";
 import SkinTypeTag from "../components/SkinTypeTag";
 import EventDescription from "../components/EventDescription";
+import EventBoxListContainer from "../components/EventBoxListContainer";
 
 const Event =  () => {
 
@@ -75,7 +76,7 @@ const Event =  () => {
             </div>
             <EventDescription/>
             <h3 className="container-fluid">Andere Kunden interessierten sich auch für:</h3>
-            <EventBoxList class="container-fluid" query={"/events?skintype="+(eventObject.skinType)+"&page=1&per-page=4"}/>
+            <EventBoxListContainer class="container-fluid" query={"skintype="+(eventObject.skinType)+"&"} page={1} perPage={4} showPagination={false}/>
         </div>
     );
 }
