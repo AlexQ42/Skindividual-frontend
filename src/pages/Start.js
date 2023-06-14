@@ -5,7 +5,7 @@ const Start =  () => {
 
     return (
         <div id="startPage">
-            <Carousel/>
+            <Carousel showButton={true}/>
             <h3 className="container-fluid headline">Veranstaltungen</h3>
             <div className="container-fluid">
                 <p>Filter:</p>

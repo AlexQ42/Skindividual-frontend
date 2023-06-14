@@ -64,11 +64,11 @@ function EventBoxListContainer({query, showPagination, page, perPage}) {
         paginationComponent = <nav>
             <ul className="pagination justify-content-center">
                 <li className={"page-item "+(currentPage <= 1 ? "disabled" : "")}>
-                    <button className="page-link" onClick={() => handlePaginationClick("prev")}>Vorherige</button>
+                    <button className="page-link reverse" onClick={() => handlePaginationClick("prev")}>›</button>
                 </li>
                 {pageButtonArray}
                 <li className={"page-item "+(currentPage >= totalPages ? "disabled" : "")}>
-                    <button className="page-link" onClick={() => handlePaginationClick("next")}>Nächste</button>
+                    <button className="page-link" onClick={() => handlePaginationClick("next")}>›</button>
                 </li>
             </ul>
         </nav>
