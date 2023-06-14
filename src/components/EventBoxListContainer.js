@@ -2,7 +2,7 @@ import {useEffect, useState} from "react";
 import {getEventList} from "../api/EventAccessor";
 import EventBoxList from "./EventBoxList";
 
-function EventBoxListContainer({query, page, perPage}) {
+function EventBoxListContainer({query, showPagination, page, perPage}) {
     const [resultEventList, setResultEventList] = useState([]);
     const [apiResponse, setApiResponse] = useState([]);
     const [paginationInfo, setPaginationInfo] = useState([page, perPage]);
@@ -39,9 +39,9 @@ function EventBoxListContainer({query, page, perPage}) {
     function handlePaginationClick(key) {
 
         switch (key) {
-            case "prev": if(currentPage > 1) setPaginationInfo([currentPage-1, 6]); break;
-            case "next": if(currentPage > 0 && currentPage < totalPages) setPaginationInfo([currentPage+1, 6]); break;
-            default: setPaginationInfo([key, 6]);
+            case "prev": if(currentPage > 1) setPaginationInfo([currentPage-1, perPage]); break;
+            case "next": if(currentPage > 0 && currentPage < totalPages) setPaginationInfo([currentPage+1, perPage]); break;
+            default: setPaginationInfo([key, perPage]);
         }
 
         updateComponent();
@@ -60,7 +60,7 @@ function EventBoxListContainer({query, page, perPage}) {
 
     let paginationComponent = ""
 
-    if(totalPages > 0) {
+    if(totalPages > 0 && showPagination) {
         paginationComponent = <nav>
             <ul className="pagination justify-content-center">
                 <li className={"page-item "+(currentPage <= 1 ? "disabled" : "")}>

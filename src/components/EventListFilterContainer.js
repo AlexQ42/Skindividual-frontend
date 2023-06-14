@@ -90,7 +90,7 @@ const EventListFilterContainer = () => {
                 <button className="button" onClick={handleApply}>Anwenden</button>
                 <button className="button" onClick={handleResetFilters}>Zurücksetzen</button>
             </div>
-            <EventBoxListContainer className="container-fluid" query={query} page={1} perPage={6}/>
+            <EventBoxListContainer className="container-fluid" query={query} showPagination={true} page={1} perPage={6}/>
         </div>
     )
 }
