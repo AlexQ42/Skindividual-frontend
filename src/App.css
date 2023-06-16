@@ -458,36 +458,52 @@ h5 {
   border-bottom-right-radius: 100%;
 }
 
-@media  (max-width: 600px) {
-
-.flexEventList {
-flex-direction: column;
+.form-group {
+  padding: 1vw;
 }
 
-p, h4, .priceEventBox, .priceEventBox > span {
-font-size: 3vw;
+.card {
+  margin: 1vw;
 }
 
-.skinTypeTag {
-font-size: 2.4vw;
+.form-control {
+  width: 30vw;
+  margin: 1vw;
 }
 
-.eventBoxContent {
-width: 40rem;
-}
-
-.imageTest {
-width: 20rem;
-}
-
-#logo
+@media  (max-width: 600px)
 {
-font-size: 4rem;
+
+  .flexEventList {
+    flex-direction: column;
+  }
+
+  p, h4, .priceEventBox, .priceEventBox > span {
+    font-size: 3vw;
+  }
+
+  .skinTypeTag {
+    font-size: 2.4vw;
+  }
+
+  .eventBoxContent {
+    width: 40rem;
+  }
+
+  .imageTest {
+    width: 20rem;
+  }
+
+  #logo {
+    font-size: 4rem;
+  }
 }
 
-}
 
-</* Eventseite*/>
+
+/*Eventseite*/
+
+
 .decrement {
   margin-right: 0.7vw;
 }
@@ -557,6 +573,6 @@ font-size: 4rem;
   border-radius: 0.7vw 0vw 0vw 0.7vw;
 }
 
-.detail2{
+.detail2 {
   margin-top: 2.5vw;
 }

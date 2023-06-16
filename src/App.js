@@ -12,12 +12,42 @@ import Imprint from "./pages/Imprint";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
 import Header from "./components/Header";
+import {useEffect, useState} from "react";
+import AuthService from "./api/AuthService";
+import EventBus from "./api/EventBus";
 
 function App() {
-  return (
+
+    const [currentUser, setCurrentUser] = useState(null);
+
+    useEffect(() => {
+        const user = AuthService.getCurrentUser();
+        console.log("currentUser: "+user);
+
+        if (user) {
+            setCurrentUser(user);
+        }
+
+        EventBus.on("logout", () => {
+            logOut();
+        });
+
+        return () => {
+            EventBus.remove("logout");
+        };
+    }, []);
+
+    const logOut = () => {
+        AuthService.logout();
+        setCurrentUser(null);
+    };
+
+
+
+    return (
     <div className="App">
         <BrowserRouter>
-            <Header/>
+            <Header user={currentUser}/>
             <div className="content">
                 <Routes className="content container-fluid">
                     <Route path="/" element={<Start />}></Route>
