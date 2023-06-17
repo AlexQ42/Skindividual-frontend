@@ -13,3 +13,14 @@ export async function getUser() {
     return null;
   }
 }
+
+export function patchUser(firstname, lastname, email, skinType) {
+    return axiosInstance.patch("/users", {
+      firstname,
+      lastname,
+      email,
+      skinType
+    }, { headers: authHeader() })
+      .then(
+          (response) => {return response.data});
+}

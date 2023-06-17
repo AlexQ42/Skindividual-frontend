@@ -212,7 +212,6 @@ h5 {
   margin-left: 2vw;
 }
 
-
 .button {
   font-weight: bolder;
   color: black;
@@ -231,6 +230,8 @@ h5 {
 .buttonImage {
   margin-bottom: 0.3vw;
   margin-right: 0.7vw;
+  width: 1.8vw;
+  height: auto;
 }
 
 .carousel {
@@ -458,6 +459,8 @@ h5 {
   border-bottom-right-radius: 100%;
 }
 
+/*Login und Accountseite*/
+
 .form-group {
   padding: 1vw;
 }
@@ -468,7 +471,73 @@ h5 {
 
 .form-control {
   width: 30vw;
-  margin: 1vw;
+  margin: 1vw 1vw 1vw 0;
+}
+
+.accountPageContainer {
+  margin: 2vw 0;
+  padding: 3vw 3vw 0 3vw;
+  border: 1px solid #EDEDED;
+  border-radius: 0.8vw;
+}
+
+.accountForm {
+  margin-bottom: 2.2vw;
+}
+
+.buttonContainer {
+  margin-bottom: 2.2vw;
+  display: inline;
+  text-align: right;
+}
+
+.buttonContainer > button {
+  margin-right: 1.5vw;
+}
+
+.logoutButton {
+  background-color: #ce9898;
+  margin-bottom: 2vw;
+}
+
+.logoutButton:hover {
+  background-color: #dcb8b8;
+}
+
+.flexBottom {
+  align-items: end;
+}
+
+.error {
+  font-size: 1.5vw;
+  margin-top: 1.5vw;
+}
+
+.positive {
+  background-color: rgba(182, 199, 185, 0.25);
+  color: #495d4b;
+  border-color: #B6C7B9;
+}
+
+.skinTypeDropdown {
+  width: 18vw;
+  margin-right: 1.5vw;
+}
+
+.skinTypeInput {
+  width: 18vw;
+  margin: 0 0 1vw 0;
+}
+
+.skinTypeButton {
+  color: white;
+  background-color: #778DA9;
+  width: max-content;
+}
+
+.skinTypeButton:hover {
+  color: white;
+  background-color: #9CB1CD;
 }
 
 @media  (max-width: 600px)
@@ -498,7 +567,6 @@ h5 {
     font-size: 4rem;
   }
 }
-
 
 
 /*Eventseite*/

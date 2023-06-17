@@ -1,5 +1,5 @@
-import {useEffect, useState} from "react";
-import {getUser} from "../api/UserAccessor";
+import {useEffect, useRef, useState} from "react";
+import {getUser, patchUser} from "../api/UserAccessor";
 import AuthService from "../api/AuthService";
 import {useNavigate} from "react-router-dom";
 
@@ -8,6 +8,11 @@ const Account = () => {
     const navigate = useNavigate();
 
     const [user, setUser] = useState(null)
+    const [message, setMessage] = useState("")
+    const firstnameField = useRef();
+    const lastnameField = useRef();
+    const emailField = useRef();
+    const skinTypeField = useRef();
 
     useEffect( () => {
         async function fetchData() {
@@ -17,6 +22,7 @@ const Account = () => {
         fetchData();
     }, []);
 
+
     function logout()
     {
         AuthService.logout();
@@ -24,10 +30,61 @@ const Account = () => {
         window.location.reload();
     }
 
+    function handleSaveChanges()
+    {
+        console.log("hello");
+        patchUser(firstnameField.current.value, lastnameField.current.value, emailField.current.value, skinTypeField.current.value)
+            .then((response) =>
+                {
+                    console.log(response);
+                    setMessage("Daten erfolgreich geändert.")
+                },
+                (error) => {
+                    console.log(error);
+                    const resMessage =
+                        (
+                            error.response.data) ||
+                        error.message ||
+                        error.toString();
+
+                    setMessage(resMessage);
+                }
+            );
+    }
+
     return (
         <div id="accountPage">
-            <p>Hallo{user !== null? ", "+user.firstname+"!" : "!"}</p>
-            <button onClick={logout}>Ausloggen</button>
+            <br/>
+            <h2>Mein Konto</h2>
+            <div className="accountPageContainer">
+                <h3>Persönliche Daten</h3><br/>
+                <div className="flexSpaceBetween flexBottom">
+                    <div className="accountForm">
+                        <label htmlFor="Firstname">Vorname</label><br/>
+                        <input className="form-control skinTypeInput" ref={firstnameField} type="text" name="Firstname" defaultValue={user !== null? user.firstname : ""}/><br/>
+                        <label htmlFor="Lastname">Nachname</label><br/>
+                        <input className="form-control skinTypeInput" ref={lastnameField} type="text" name="Lastname" defaultValue={user !== null ? user.lastname : ""}/><br/>
+                        <label htmlFor="Email">E-Mail-Adresse</label><br/>
+                        <input className="form-control skinTypeInput" ref={emailField} type="email" name="Email" defaultValue={user !== null? user.email : ""}/><br/>
+                        <label htmlFor="SkinType">Hauttyp</label><br/>
+                        <select ref={skinTypeField} name="SkinType" className="form-select dropdown skinTypeDropdown" aria-label="Select skin type">
+                            <option defaultValue="" value="">keine Angabe</option>
+                            <option value="normal">normal</option>
+                            <option value="oily">ölig</option>
+                            <option value="combination">Mischhaut</option>
+                            <option value="dry">trocken</option>
+                            <option value="sensitive">sensibel</option>
+                        </select>
+                        <button className="button skinTypeButton">zum Hauttyptest</button>
+                        {message !== ""? <p className={"alert alert-danger error"+(message === "Daten erfolgreich geändert." ? " positive" : "")}>{message}</p> : ""}
+                    </div>
+                    <div className="buttonContainer">
+                        <button className="button">Passwort ändern</button>
+                        <button className="button" onClick={() => handleSaveChanges()}>Änderungen speichern</button>
+                    </div>
+                </div>
+            </div>
+        <button className="button logoutButton" onClick={logout}>Ausloggen</button>
         </div>
     );
 }

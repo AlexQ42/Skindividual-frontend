@@ -52,7 +52,7 @@ const Login = () => {
     const handleLogin = (e) => {
         e.preventDefault();
 
-        setMessage("XX");
+        setMessage("");
         setLoading(true);
 
         //form.current.validateAll();
@@ -79,9 +79,13 @@ const Login = () => {
         );
     };
 
+    //TODO register
+
     return (
         <div className="col-md-12">
-            <div className="card card-container">
+            <br/>
+            <h2>Anmelden</h2>
+            <div className="accountForm accountPageContainer">
                 <div ref={form}>
                     <div className="form-group">
                         <label htmlFor="name">E-Mail</label>

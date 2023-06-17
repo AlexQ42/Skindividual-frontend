@@ -1,6 +1,6 @@
 import {Link} from "react-router-dom";
-import account from "../assets/account.svg";
-import cart from "../assets/cart.svg"
+import account from "../assets/account.png";
+import cart from "../assets/cart.png"
 
 const Header =  ({user}) => {
 
@@ -10,7 +10,7 @@ const Header =  ({user}) => {
         <div id="header" className="container-fluid">
             <div className="flexSpaceBetween headerContainer">
                 <Link id="logo" to="/">Skindividual.</Link>
-                <div>
+                <div className="headerButtonContainer">
                     {user !== null? <Link className="button headerButton" to="/account">
                             <img className="buttonImage" src={account} alt=""></img>
                             <span>Mein Konto</span>
