@@ -1,32 +1,7 @@
-
-
-/*const Login =  () => {
-
-    return (
-        <div id="loginPage">
-            <input id="inputEmail" type="text"/>
-            <input id="inputPassword" type="password"/>
-        </div>
-    );
-}*/
-
-import {useNavigate} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import {useRef, useState} from "react";
 import AuthService from "../api/AuthService";
-import Form from "react-validation/build/form";
-import Input from "react-validation/build/input";
-import CheckButton from "react-validation/build/button";
 
-
-const required = (value) => {
-    if (!value) {
-        return (
-            <div className="alert alert-danger" role="alert">
-                This field is required!
-            </div>
-        );
-    }
-};
 
 const Login = () => {
     let navigate = useNavigate();
@@ -34,14 +9,14 @@ const Login = () => {
     const form = useRef();
     const checkBtn = useRef();
 
-    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [loading, setLoading] = useState(false);
     const [message, setMessage] = useState("");
 
-    const onChangeName = (e) => {
+    const onChangeEmail = (e) => {
         const name = e.target.value;
-        setName(name);
+        setEmail(name);
     };
 
     const onChangePassword = (e) => {
@@ -57,7 +32,7 @@ const Login = () => {
 
         //form.current.validateAll();
 
-        AuthService.login(name, password).then((response) =>
+        AuthService.login(email, password).then((response) =>
         {
             //Umleitung, Rückgabe wird nicht angezeigt
             setLoading(false)
@@ -73,49 +48,67 @@ const Login = () => {
                     error.message ||
                     error.toString();
 
-                setLoading(false);
-                setMessage(resMessage);
+            setLoading(false);
+
+            if(resMessage.includes("The email field is required"))
+            {
+                setMessage("Das E-Mail-Feld ist erforderlich.")
+            }
+            else if(resMessage.includes("The password field is required"))
+            {
+                setMessage("Das Passwort-Feld ist erforderlich.")
+            }
+            else if(resMessage.includes("The email field must be a valid email address"))
+            {
+                setMessage("Das E-Mail-Feld muss eine valide E-Mail-Adresse enthalten.")
+            }
+            else if(resMessage.includes("Invalid credentials"))
+            {
+                setMessage("Ungültige Anmeldedaten")
+            }
+            else setMessage(resMessage);
             }
         );
     };
 
-    //TODO register
 
     return (
-        <div className="col-md-12">
+        <div className="col-md-12 loginPage">
             <br/>
             <h2>Anmelden</h2>
-            <div className="accountForm accountPageContainer">
+            <br/>
+            <div className="accountForm accountPageContainer loginPageContainer flexCenter">
                 <div ref={form}>
                     <div className="form-group">
-                        <label htmlFor="name">E-Mail</label>
+                        <label htmlFor="email">E-Mail</label>
                         <input
                             type="text"
-                            className="form-control"
+                            className="form-control formField"
                             name="email"
-                            value={name}
-                            onChange={onChangeName}
+                            value={email}
+                            onChange={onChangeEmail}
                         />
                     </div>
 
                     <div className="form-group">
-                        <label htmlFor="password">Password</label>
+                        <label htmlFor="password">Passwort</label>
                         <input
                             type="password"
-                            className="form-control"
+                            className="form-control formField"
                             name="password"
                             value={password}
                             onChange={onChangePassword}
                         />
                     </div>
 
-                    <div className="form-group">
+                    <div className="form-group flexCenter">
                         <button className="btn btn-primary btn-block button" disabled={loading} onClick={handleLogin}>
                             {loading && (
                                 <span className="spinner-border spinner-border-sm"></span>
                             )}
-                            <span>Login</span>
+                            <span>Anmelden</span>
                         </button>
+                        <Link to={"/register"} className="notRegisteredLink">Noch nicht registriert?</Link>
                     </div>
 
                     {message && (

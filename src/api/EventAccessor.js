@@ -1,15 +1,8 @@
 import axiosInstance from "./AxiosInstance";
 
-export async function getEventList(query)
+export function getEventList(query)
 {
-    try {
-        const response = await axiosInstance.get(query);
-        return await response.data;
-
-    } catch (error) {
-        console.error(error);
-        return null;
-    }
+    return axiosInstance.get(query).then((response) => {console.log(response); return response})
 }
 
 export async function getEventByID(id)

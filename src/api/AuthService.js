@@ -1,11 +1,14 @@
 import axiosInstance from "./AxiosInstance";
 import authHeader from "./AuthHeader";
 
-const register = (name, email, password) => {
-  return axiosInstance.post("/register", {
-    name,
-    email,
-    password,
+const register = (firstname, lastname, name, email, password, skinType) => {
+  return axiosInstance.post("/users", {
+      firstname,
+      lastname,
+      name,
+      email,
+      password,
+      skinType
   });
 };
 

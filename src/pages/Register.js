@@ -1,69 +1,39 @@
-import React, { useState, useRef } from "react";
-import Form from "react-validation/build/form";
-import Input from "react-validation/build/input";
-import CheckButton from "react-validation/build/button";
-import { isEmail } from "react-validation";
-
+import {useNavigate} from "react-router-dom";
+import {useRef, useState} from "react";
 import AuthService from "../api/AuthService";
 
-const required = (value) => {
-  if (!value) {
-    return (
-      <div className="alert alert-danger" role="alert">
-        This field is required!
-      </div>
-    );
-  }
-};
-
-const validEmail = (value) => {
-  if (!isEmail(value)) {
-    return (
-      <div className="alert alert-danger" role="alert">
-        This is not a valid email.
-      </div>
-    );
-  }
-};
-
-const vname = (value) => {
-  if (value.length < 3 || value.length > 20) {
-    return (
-      <div className="alert alert-danger" role="alert">
-        The name must be between 3 and 20 characters.
-      </div>
-    );
-  }
-};
-
-const vpassword = (value) => {
-  if (value.length < 6 || value.length > 40) {
-    return (
-      <div className="alert alert-danger" role="alert">
-        The password must be between 6 and 40 characters.
-      </div>
-    );
-  }
-};
 
 const Register = () => {
+  let navigate = useNavigate();
+
   const form = useRef();
   const checkBtn = useRef();
 
-  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [firstname, setFirstname] = useState("");
+  const [lastname, setLastname] = useState("");
+  const [skinType, setSkinType] = useState("");
   const [password, setPassword] = useState("");
-  const [successful, setSuccessful] = useState(false);
   const [message, setMessage] = useState("");
 
-  const onChangeName = (e) => {
-    const name = e.target.value;
-    setName(name);
+  const onChangeSkinType = (e) => {
+    const skinType = e.target.value;
+    setSkinType(skinType);
+  };
+
+  const onChangeFirstname = (e) => {
+    const firstname = e.target.value;
+    setFirstname(firstname);
+  };
+
+  const onChangeLastname = (e) => {
+    const lastname = e.target.value;
+    setLastname(lastname);
   };
 
   const onChangeEmail = (e) => {
-    const email = e.target.value;
-    setEmail(email);
+    const name = e.target.value;
+    setEmail(name);
   };
 
   const onChangePassword = (e) => {
@@ -75,103 +45,127 @@ const Register = () => {
     e.preventDefault();
 
     setMessage("");
-    setSuccessful(false);
 
-    form.current.validateAll();
 
-    if (checkBtn.current.context._errors.length === 0) {
-      AuthService.register(name, email, password).then(
-        (response) => {
-          //hier ggf. nur eine Erfolgsmeldung oder direkt einloggen
-          setMessage(JSON.stringify(response.data));
-          //setMessage(response.data.message);
-          setSuccessful(true);
+    AuthService.register(firstname, lastname, (""+firstname+lastname), email, password, skinType).then((response) =>
+        {
+          //Umleitung, Rückgabe wird nicht angezeigt
+          navigate("/login");
+          window.location.reload();
         },
         (error) => {
           const resMessage =
-            (error.response &&
-              error.response.data &&
-              error.response.data.message) ||
-            error.message ||
-            error.toString();
+              (
+                  error.response &&
+                  error.response.data &&
+                  error.response.data.message) ||
+              error.message ||
+              error.toString();
 
-          setMessage(resMessage);
-          setSuccessful(false);
+
+          if(resMessage.includes("The email field is required"))
+          {
+            setMessage("Das E-Mail-Feld ist erforderlich.")
+          }
+          else if(resMessage.includes("The password field is required"))
+          {
+            setMessage("Das Passwort-Feld ist erforderlich.")
+          }
+          else if(resMessage.includes("The email field must be a valid email address"))
+          {
+            setMessage("Das E-Mail-Feld muss eine valide E-Mail-Adresse enthalten.")
+          }
+          else if(resMessage.includes("Invalid credentials"))
+          {
+            setMessage("Ungültige Anmeldedaten")
+          }
+          else setMessage(resMessage);
         }
-      );
-    }
+    );
   };
 
+
   return (
-    <div className="col-md-12">
-      <div className="card card-container">
-        <img
-          src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
-          alt="profile-img"
-          className="profile-img-card"
-        />
+      <div className="col-md-12">
+        <br/>
+        <h2>Anmelden</h2>
+        <br/>
+        <div className="accountForm accountPageContainer flexCenter">
+          <div ref={form}>
 
-        <Form onSubmit={handleRegister} ref={form}>
-          {!successful && (
-            <div>
-              <div className="form-group">
-                <label htmlFor="name">Name</label>
-                <Input
+            <div className="form-group">
+              <label htmlFor="firstname">Vorname</label>
+              <input
                   type="text"
-                  className="form-control"
-                  name="name"
-                  value={name}
-                  onChange={onChangeName}
-                  validations={[required, vname]}
-                />
-              </div>
+                  className="form-control formField"
+                  name="firstname"
+                  value={firstname}
+                  onChange={onChangeFirstname}
+              />
+            </div>
 
-              <div className="form-group">
-                <label htmlFor="email">Email</label>
-                <Input
+            <div className="form-group">
+              <label htmlFor="lastname">Nachname</label>
+              <input
                   type="text"
-                  className="form-control"
+                  className="form-control formField"
+                  name="lastname"
+                  value={lastname}
+                  onChange={onChangeLastname}
+              />
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="email">E-Mail</label>
+              <input
+                  type="text"
+                  className="form-control formField"
                   name="email"
                   value={email}
                   onChange={onChangeEmail}
-                  validations={[required, validEmail]}
-                />
-              </div>
+              />
+            </div>
 
-              <div className="form-group">
-                <label htmlFor="password">Password</label>
-                <Input
+            <div className="form-group">
+              <label htmlFor="password">Passwort</label>
+              <input
                   type="password"
-                  className="form-control"
+                  className="form-control formField"
                   name="password"
                   value={password}
                   onChange={onChangePassword}
-                  validations={[required, vpassword]}
-                />
-              </div>
-
-              <div className="form-group">
-                <button className="btn btn-primary btn-block">Sign Up</button>
-              </div>
+              />
             </div>
-          )}
 
-          {message && (
-            <div className="form-group">
-              <div
-                className={
-                  successful ? "alert alert-success" : "alert alert-danger"
-                }
-                role="alert"
-              >
-                {message}
-              </div>
+            <label htmlFor="SkinType">Hauttyp</label><br/>
+            <select name="SkinType" className="form-select dropdown skinTypeDropdown" aria-label="Select skin type" onChange={onChangeSkinType}>
+              <option defaultValue="" value="">keine Angabe</option>
+              <option value="normal">normal</option>
+              <option value="oily">ölig</option>
+              <option value="combination">Mischhaut</option>
+              <option value="dry">trocken</option>
+              <option value="sensitive">sensibel</option>
+            </select>
+            <button className="button skinTypeTestButton">zum Hauttyptest</button>
+
+            <div className="form-group flexCenter">
+              <button className="btn btn-primary btn-block button" onClick={handleRegister}>
+                <span>Registrieren</span>
+              </button>
             </div>
-          )}
-          <CheckButton style={{ display: "none" }} ref={checkBtn} />
-        </Form>
+
+            {message && (
+                <div className="form-group">
+                  <div className="alert alert-danger" role="alert">
+                    {message}
+                  </div>
+                </div>
+            )}
+            <button style={{ display: "none" }} ref={checkBtn} />
+          </div>
+          <br/>
+        </div>
       </div>
-    </div>
   );
 };
 

@@ -3,7 +3,8 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Sora', sans-serif;
-  font-size: 1.5vw;
+  font-size: 1.4vw;
+  --bs-primary: #9ea4a4
 }
 
 p {
@@ -11,8 +12,10 @@ p {
 }
 
 .App {
-  display: grid;
   overflow: hidden;
+  height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
 }
 
 .container-fluid {
@@ -48,9 +51,9 @@ p {
 .eventBox {
   border: 0;
   border-radius: 0.8vw;
-  box-shadow: 2px 2px 5px darkgrey;
+  box-shadow: 2px 2px 5px #c5c5c5;
   text-align: left;
-  width: max-content;
+  width: 45vw;
   margin-bottom: 1vw;
 }
 
@@ -65,7 +68,7 @@ p {
 }
 
 .eventBoxContent {
-  width: 20rem;
+  width: 25rem;
   padding: 1rem;
 }
 
@@ -83,7 +86,7 @@ p {
   margin: 0;
 }
 
-.imageTest {
+.imageInBox {
   height: inherit;
   width: 10rem;
   border: 1px transparent;
@@ -294,31 +297,71 @@ h5 {
 
 .dropdown {
   display: inline;
-  width: 13vw;
+  width: 12vw;
   box-shadow: none;
   border-radius: 0.8vw;
   font-family: 'Sora', sans-serif;
-  font-size: 1.5vw;
+  font-size: 1.2vw;
+  background-color: #EDEDED;
+  border-color: transparent;
 }
 
 .dropdown:focus {
   box-shadow: none;
-  border-color: #B6C7B9;
+  border-color: transparent;
+}
+
+.dateInput {
+  width: 12vw;
+  font-size: 1.2vw;
+}
+
+.dateDropdownButton {
+  border-color: transparent;
+  color: black;
+  background-color: #EDEDED;
+  text-align: start;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 16px 12px;
+}
+
+.dateDropdownButton:hover, .dateDropdownButton:focus, .dateDropdownButton:not(:focus), .dateDropdownButton:enabled {
+  border-color: transparent;
+  background-color: #EDEDED;
+  color: black;
+}
+
+.dateDropdownForm {
+  background-color: #EDEDED;
+  border-color: transparent;
+}
+
+.dateDropdownFormLabel {
+  font-size: 1.2vw;
+  margin-bottom: 0;
 }
 
 .searchButton {
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
-  border: 2px solid transparent;
-  padding: 0.5vw 1.5vw;
+
+  padding: 0.35vw 1vw;
 }
 
 .searchButton > img {
-  height: 2.4vw;
+  height: 1.6vw;
+}
+
+.filterButton {
+  padding: 0.3vw 1.5vw;
+  font-size: 1.3vw;
 }
 
 .search {
-  padding: 0.6vw;
+  padding: 0.4vw;
+  font-size: 1.2vw;
   border: 1px solid #ced4da;
   border-radius: 0.8vw 0 0 0.8vw;
 }
@@ -470,8 +513,26 @@ h5 {
 }
 
 .form-control {
-  width: 30vw;
   margin: 1vw 1vw 1vw 0;
+}
+
+.formField {
+  width: 30vw;
+}
+
+.notRegisteredLink {
+  color: grey;
+  margin: 2vw 0;
+}
+
+.notRegisteredLink:hover {
+  color: #a4a1a1;
+}
+
+.flexCenter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .accountPageContainer {
@@ -479,6 +540,16 @@ h5 {
   padding: 3vw 3vw 0 3vw;
   border: 1px solid #EDEDED;
   border-radius: 0.8vw;
+  box-shadow: 2px 2px 5px #c5c5c5;
+}
+
+.loginPageContainer {
+  margin: 2vw auto;
+  width: max-content;
+}
+
+.loginPage {
+  height: 82vh;
 }
 
 .accountForm {
@@ -509,8 +580,9 @@ h5 {
 }
 
 .error {
-  font-size: 1.5vw;
+  font-size: 1.2vw;
   margin-top: 1.5vw;
+  padding: 1vw;
 }
 
 .positive {
@@ -529,13 +601,14 @@ h5 {
   margin: 0 0 1vw 0;
 }
 
-.skinTypeButton {
+.skinTypeTestButton {
   color: white;
   background-color: #778DA9;
   width: max-content;
+  margin-right: 1.5vw;
 }
 
-.skinTypeButton:hover {
+.skinTypeTestButton:hover {
   color: white;
   background-color: #9CB1CD;
 }
@@ -555,11 +628,15 @@ h5 {
     font-size: 2.4vw;
   }
 
-  .eventBoxContent {
-    width: 40rem;
+  .eventBox {
+    width: 90vw;
   }
 
-  .imageTest {
+  .eventBoxContent {
+    width: 65vw;
+  }
+
+  .imageInBox {
     width: 20rem;
   }
 

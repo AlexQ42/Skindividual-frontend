@@ -61,11 +61,11 @@ const Account = () => {
                 <div className="flexSpaceBetween flexBottom">
                     <div className="accountForm">
                         <label htmlFor="Firstname">Vorname</label><br/>
-                        <input className="form-control skinTypeInput" ref={firstnameField} type="text" name="Firstname" defaultValue={user !== null? user.firstname : ""}/><br/>
+                        <input className="form-control formField skinTypeInput" ref={firstnameField} type="text" name="Firstname" defaultValue={user !== null? user.firstname : ""}/><br/>
                         <label htmlFor="Lastname">Nachname</label><br/>
-                        <input className="form-control skinTypeInput" ref={lastnameField} type="text" name="Lastname" defaultValue={user !== null ? user.lastname : ""}/><br/>
+                        <input className="form-control formField skinTypeInput" ref={lastnameField} type="text" name="Lastname" defaultValue={user !== null ? user.lastname : ""}/><br/>
                         <label htmlFor="Email">E-Mail-Adresse</label><br/>
-                        <input className="form-control skinTypeInput" ref={emailField} type="email" name="Email" defaultValue={user !== null? user.email : ""}/><br/>
+                        <input className="form-control formField skinTypeInput" ref={emailField} type="email" name="Email" defaultValue={user !== null? user.email : ""}/><br/>
                         <label htmlFor="SkinType">Hauttyp</label><br/>
                         <select ref={skinTypeField} name="SkinType" className="form-select dropdown skinTypeDropdown" aria-label="Select skin type">
                             <option defaultValue="" value="">keine Angabe</option>
@@ -75,7 +75,7 @@ const Account = () => {
                             <option value="dry">trocken</option>
                             <option value="sensitive">sensibel</option>
                         </select>
-                        <button className="button skinTypeButton">zum Hauttyptest</button>
+                        <button className="button skinTypeTestButton">zum Hauttyptest</button>
                         {message !== ""? <p className={"alert alert-danger error"+(message === "Daten erfolgreich geändert." ? " positive" : "")}>{message}</p> : ""}
                     </div>
                     <div className="buttonContainer">
@@ -84,7 +84,10 @@ const Account = () => {
                     </div>
                 </div>
             </div>
-        <button className="button logoutButton" onClick={logout}>Ausloggen</button>
+            <div className="flexSpaceBetween">
+                <button className="button logoutButton" onClick={logout}>Ausloggen</button>
+                <button className="button logoutButton" >Account löschen</button>
+            </div>
         </div>
     );
 }

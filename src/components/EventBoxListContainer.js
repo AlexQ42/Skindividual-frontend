@@ -6,6 +6,7 @@ function EventBoxListContainer({query, showPagination, page, perPage}) {
     const [resultEventList, setResultEventList] = useState([]);
     const [apiResponse, setApiResponse] = useState([]);
     const [paginationInfo, setPaginationInfo] = useState([page, perPage]);
+    const [message, setMessage] = useState("");
 
     let totalPages = apiResponse.last_page;
     let currentPage = apiResponse.current_page;
@@ -16,22 +17,41 @@ function EventBoxListContainer({query, showPagination, page, perPage}) {
 
     function updateComponent()
     {
-        // TODO always reset page to 1 when filter has changed
-
         let fullQuery = ("/events?"+query+"page="+paginationInfo[0]+"&perpage="+paginationInfo[1]);
         async function fetchData()
         {
-            const data = await getEventList(fullQuery)
-            setResultEventList(data.data);
-            setApiResponse(data);
-            if(data.last_page < data.current_page)
+            getEventList(fullQuery).then((response) =>
             {
-                fullQuery = ("/events?"+query+"page="+1+"&perpage="+paginationInfo[1]);
-                setPaginationInfo([1, paginationInfo[1]]);
-                const data = await getEventList(fullQuery)
-                setResultEventList(data.data);
-                setApiResponse(data);
-            }
+                setResultEventList(response.data.data);
+                setApiResponse(response.data);
+                if(response.last_page < response.current_page)
+                {
+                    fullQuery = ("/events?"+query+"page="+1+"&perpage="+paginationInfo[1]);
+                    setPaginationInfo([1, paginationInfo[1]]);
+                    getEventList(fullQuery).then((response) =>
+                    {
+                        setResultEventList(response.data.data);
+                        setApiResponse(response.data);
+                    });
+                }
+                setMessage("");
+            },
+                (error) =>
+                {
+                    console.log("Hi");
+                    console.log(error);
+                    const resMessage =
+                        (
+                            error.response.data.message) ||
+                        error.message ||
+                        error.toString();
+                    if(resMessage.includes("The enddate field must be a date after or equal to startdate."))
+                    {
+                        setMessage("Das Enddatum des Zeitraums muss gleich oder später als das Startdatum sein.")
+                    }
+                    else setMessage(resMessage);
+                }
+            );
         }
         fetchData();
     }
@@ -75,6 +95,7 @@ function EventBoxListContainer({query, showPagination, page, perPage}) {
     }
 
     return <div className="eventBoxList">
+        <p className="error alert alert-danger" hidden={message === ""}>{message}</p>
         <EventBoxList list={resultEventList} />
         <div className="paginationContainer">
             {paginationComponent}

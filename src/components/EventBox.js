@@ -15,7 +15,7 @@ const EventBox = ({ eventObject }) => {
 
     return <div className="eventBox">
         <Link to={"/events/"+resultEvent.id} className="eventBoxLink flexLeft">
-            <div className="imageTest"></div>
+            <div className="imageInBox"></div>
             <div className="eventBoxContent">
                 <div className="flexSpaceBetween">
                     <div>

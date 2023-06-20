@@ -46,7 +46,7 @@ function App() {
 
     return (
     <div className="App">
-        <BrowserRouter>
+        <BrowserRouter className="siteContainer">
             <Header user={currentUser}/>
             <div className="content">
                 <Routes className="content container-fluid">
