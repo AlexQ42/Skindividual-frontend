@@ -15,9 +15,8 @@ const Account = () => {
     const skinTypeField = useRef();
 
     useEffect( () => {
-        async function fetchData() {
-            const data = await getUser()
-            setUser(data);
+        function fetchData() {
+            getUser().then((response) => setUser(response))
         }
         fetchData();
     }, []);
@@ -67,7 +66,7 @@ const Account = () => {
                         <label htmlFor="Email">E-Mail-Adresse</label><br/>
                         <input className="form-control formField skinTypeInput" ref={emailField} type="email" name="Email" defaultValue={user !== null? user.email : ""}/><br/>
                         <label htmlFor="SkinType">Hauttyp</label><br/>
-                        <select ref={skinTypeField} name="SkinType" className="form-select dropdown skinTypeDropdown" aria-label="Select skin type">
+                        <select ref={skinTypeField} name="SkinType" value={user !== null && user.skinType !== "none" ? user.skinType : ""} className="form-select dropdown skinTypeDropdown" aria-label="Select skin type">
                             <option defaultValue="" value="">keine Angabe</option>
                             <option value="normal">normal</option>
                             <option value="oily">ölig</option>

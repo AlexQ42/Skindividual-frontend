@@ -12,7 +12,6 @@ const Event =  () => {
 
     const { id } = useParams();
     const [eventObject, setEventObject] = useState([]);
-    const [reviews, setReviews] = useState([]);
     const [ticketCounterValue, setTicketCounterValue] = useState(1);
     const ticketCounter = useRef(null);
 
@@ -24,8 +23,6 @@ const Event =  () => {
                 {
                     result !== [] ? setEventObject(result[0]) : setEventObject([]);
                     console.log(result);
-                    setReviews(result[0].reviews);
-                    console.log(reviews);
                 }
             )
 
@@ -93,7 +90,7 @@ const Event =  () => {
                     <img className="eventPageImage" src={karte} alt=""></img>
                 </div>
                 <div>
-                    <ReviewOverview reviews={reviews}/>
+                    <ReviewOverview event={eventObject}/>
                 </div>
             </div>
             <div>

@@ -1,34 +1,14 @@
 import {useParams} from "react-router-dom";
 import React, {useEffect, useState} from "react";
+import {calculateAverageRating} from "../api/EventAccessor";
 
-const ReviewOverview = ({reviews}) => {
+const ReviewOverview = ({event}) => {
 
-    const [reviewState, setReviewState] = useState([])
-
-    useEffect(()=>{
-        setReviewState(reviews);
-    })
-    function getRating() {
-
-        if(reviewState !== [] && reviewState !== undefined)
-        {
-            console.log(reviewState)
-            let array = reviewState;
-            let rating = 0;
-            for(let i=0; i<array.length; i++)
-            {
-                rating += array[i].value;
-            }
-            rating /= (array.length);
-            return rating;
-        }
-        return "Error"
-    }
 
     return(
         <div className="reviewOverviewInner">
             <span><h4>Bewertung</h4></span>
-            {getRating()}
+            {calculateAverageRating(event)}
         </div>
     )
 }

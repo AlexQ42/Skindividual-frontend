@@ -9,6 +9,9 @@ const register = (firstname, lastname, name, email, password, skinType) => {
       email,
       password,
       skinType
+  }).then((response) => {
+      localStorage.setItem("user", JSON.stringify(response.data));
+      return response.data;
   });
 };
 

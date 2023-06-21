@@ -50,8 +50,9 @@ const Register = () => {
     AuthService.register(firstname, lastname, (""+firstname+lastname), email, password, skinType).then((response) =>
         {
           //Umleitung, Rückgabe wird nicht angezeigt
-          navigate("/login");
+          navigate("/account");
           window.location.reload();
+
         },
         (error) => {
           const resMessage =
@@ -62,18 +63,13 @@ const Register = () => {
               error.message ||
               error.toString();
 
-
-          if(resMessage.includes("The email field is required"))
-          {
-            setMessage("Das E-Mail-Feld ist erforderlich.")
-          }
-          else if(resMessage.includes("The password field is required"))
-          {
-            setMessage("Das Passwort-Feld ist erforderlich.")
-          }
-          else if(resMessage.includes("The email field must be a valid email address"))
+          if(resMessage.includes("The email field must be a valid email address"))
           {
             setMessage("Das E-Mail-Feld muss eine valide E-Mail-Adresse enthalten.")
+          }
+          else if(resMessage.includes("required"))
+          {
+            setMessage("Alle mit * markierten Angaben sind erforderlich.");
           }
           else if(resMessage.includes("Invalid credentials"))
           {
@@ -88,13 +84,13 @@ const Register = () => {
   return (
       <div className="col-md-12">
         <br/>
-        <h2>Anmelden</h2>
+        <h2>Registrieren</h2>
         <br/>
         <div className="accountForm accountPageContainer flexCenter">
           <div ref={form}>
 
             <div className="form-group">
-              <label htmlFor="firstname">Vorname</label>
+              <label htmlFor="firstname">Vorname*</label>
               <input
                   type="text"
                   className="form-control formField"
@@ -105,7 +101,7 @@ const Register = () => {
             </div>
 
             <div className="form-group">
-              <label htmlFor="lastname">Nachname</label>
+              <label htmlFor="lastname">Nachname*</label>
               <input
                   type="text"
                   className="form-control formField"
@@ -116,7 +112,7 @@ const Register = () => {
             </div>
 
             <div className="form-group">
-              <label htmlFor="email">E-Mail</label>
+              <label htmlFor="email">E-Mail*</label>
               <input
                   type="text"
                   className="form-control formField"
@@ -127,7 +123,7 @@ const Register = () => {
             </div>
 
             <div className="form-group">
-              <label htmlFor="password">Passwort</label>
+              <label htmlFor="password">Passwort*</label>
               <input
                   type="password"
                   className="form-control formField"

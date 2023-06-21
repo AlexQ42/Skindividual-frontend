@@ -2,6 +2,7 @@ import {useEffect, useState} from "react";
 import SkinTypeTag from "./SkinTypeTag";
 import EventReviewsAverageTag from "./EventReviewsAverageTag";
 import {Link} from "react-router-dom";
+import {calculateAverageRating} from "../api/EventAccessor";
 
 const EventBox = ({ eventObject }) => {
     const [resultEvent, setResultEvent] = useState([]);
@@ -23,7 +24,7 @@ const EventBox = ({ eventObject }) => {
                         <p className="text-start">{resultEvent === null? "place" : resultEvent.place}</p>
                         <p>{resultEvent === null? "date" : new Date(resultEvent.date).toLocaleDateString()}</p>
                     </div>
-                    <div><EventReviewsAverageTag rating={resultEvent.rating} /> </div>
+                    <div><EventReviewsAverageTag rating={calculateAverageRating(resultEvent)} /> </div>
                 </div>
 
                 <br/>
