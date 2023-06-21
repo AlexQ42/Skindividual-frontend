@@ -18,6 +18,7 @@ p {
   grid-template-rows: auto 1fr auto;
 }
 
+
 .container-fluid {
   padding: 0;
 }
@@ -721,3 +722,127 @@ h5 {
 .detail2 {
   margin-top: 2.5vw;
 }
+.firstNameLabel{
+  margin-right: 2vw;
+}
+
+.bottomForm{
+  margin-bottom: 0.5vw;
+  display: flex;
+}
+
+.Pflichtfeld{
+  font-size: 1vw;
+}
+
+.input{
+  background-color: lightgray;
+  border-radius:0.8vw;
+  border-width: 0.18vw;
+  border-style: solid;
+  border-color: darkgrey;
+  padding-left: 1vw;
+  padding-right: 1vw;
+}
+
+.formular{
+  border-style: solid;
+  border-radius:0.8vw;
+  border-color: lightgray;
+  border-width: 0.2vw;
+  padding: 2vw;
+}
+
+
+.SummeBox{
+  border-style: solid;
+  border-radius:0.8vw;
+  border-color: lightgray;
+  border-width: 0.2vw;
+  padding: 2vw;
+  margin-left: 3vw;
+}
+.produktPadding{
+  padding: 1vw;
+}
+
+.Rabatt{
+  margin-top: 2vw;
+  border-style: solid;
+  border-color: lightgray;
+  border-radius:0.8vw;
+  border-width: 0.2vw;
+  padding: 0.5vw;
+  margin-left: auto;
+
+}
+
+.Summe{
+  margin-top:2vw;
+}
+
+.bImage{
+  width: 5vw;
+  margin-left: 0.7vw;
+  margin-bottom: 0.5vw;
+  margin-top: 0.1vw;
+}
+.master{
+  width:3.8vw;
+}
+.paypal{
+  width: 6vw;
+}
+
+.radioBMann{
+  margin-left: 1vw;
+}
+
+.radioB{
+  border: 0px;
+  width: 1.5vw;
+  height: 1.5vw;
+}
+
+.spaceLeft{
+  margin-left: 2vw;
+}
+
+.Zahlungsart{
+  margin-top: 0.01vw;
+  margin-bottom: 0.01vw;
+}
+
+.SummeB{
+  border-style: solid;
+  border-radius:0.8vw;
+  border-color: lightgray;
+  border-width: 0.2vw;
+  padding: 1vw;
+  margin-left: auto;
+  margin-top: 2.5vw;
+}
+
+
+.grid-container{
+  display: grid;
+  grid-template-areas: 'grid1 grid2';
+}
+.grid1{
+  margin-bottom: auto;
+}
+.grid2{
+  margin-bottom: 1rem;
+
+}
+
+.keinButton{
+  background-color: white;
+  border-width: 0vw;
+  margin-left: 1vw;
+
+}
+
+
+
+
