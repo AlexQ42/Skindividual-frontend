@@ -503,6 +503,11 @@ h5 {
   border-bottom-right-radius: 100%;
 }
 
+.imprintImage {
+  width: 92vw;
+  margin-bottom: 2vw;
+}
+
 /*Login und Accountseite*/
 
 .form-group {

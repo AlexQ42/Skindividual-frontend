@@ -1,11 +1,11 @@
+import imprintImage from "../assets/imprint.svg";
 
 
 const Imprint =  () => {
 
     return (
         <div id="imprintPage">
-            <input id="inputEmail" type="text"/>
-            <input id="inputPassword" type="password"/>
+            <img src={imprintImage} className="imprintImage" alt=""/>
         </div>
     );
 }
