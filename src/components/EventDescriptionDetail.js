@@ -21,11 +21,11 @@ const EventDescriptionDetail = () => {
             <div className="eventDescriptionContent">
                 <div className="detail1">
                     <h5>Was ist {eventObject.name}?</h5>
-                    <p className="text-start">{eventObject.description}</p>
+                    <span className="text-start">{eventObject.description}</span>
                 </div>
                 <div className="detail2">
                     <h5 className="detail2">Behandlungsablauf</h5>
-                    <p className="text-start">{eventObject.description}</p>
+                    <span className="text-start">{eventObject.description}</span>
                 </div>
             </div>
         </div>

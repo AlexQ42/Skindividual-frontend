@@ -19,14 +19,18 @@ const EventDescriptionExpert = () => {
         fetchData();}, [id]);
 
     return (
-        <div className="eventDescriptionBox">
-            <div className="flexLeft">
-                <img className="eventExpertImage" src={imageCosmetician} alt=""></img>
-            </div>
+        <div className="eventDescriptionBox flexLeft">
             <div className="eventDescriptionContent flexSpaceBetween">
                 <div>
+                    <img className="eventExpertImage" src={imageCosmetician} alt=""></img>
+                </div>
+                <div>
                     <h5 className="title">Name</h5>
-                    <p className="text-start">{eventObject.description}</p>
+                    <span>Dr. Vinsloev</span>
+                    <div className="eventExpertText">
+                        <h5 className="title">Beschreibung</h5>
+                        <span className="text-start">{eventObject.description}</span>
+                    </div>
                 </div>
             </div>
         </div>

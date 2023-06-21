@@ -667,9 +667,9 @@ h5 {
   margin-right: 0.7vw;
   width: 5vw;
   text-align: center;
-  border-radius: 10px;
+  border-radius: 0.8vw;
   border-color: #EDEDED;
-  height: 50px;
+  height: 3.5vw;
 }
 
 .amountInCart {
@@ -713,15 +713,56 @@ h5 {
 }
 
 .eventExpertImage {
-  width: 15vw;
-  height: 15vw;
+  width: 17vw;
+  height: 17vw;
   margin-right: 2vw;
-  border-radius: 0.7vw 0vw 0vw 0.7vw;
+  border-radius: 0.7vw;
 }
 
 .detail2 {
   margin-top: 2.5vw;
 }
+
+.eventExpertText {
+  margin-top: 1vw;
+}
+
+.reviewOverviewInner {
+  border: 0.7vw #232F3E;
+  width: 30vw;
+  height: 2vw;
+}
+
+/*Skin Type banner*/
+
+.skinTypeTestBanner {
+  background-image: url('/Users/mailinh/Documents/git/skindividual-frontend/src/assets/testpic.svg');
+}
+
+.testBannerInner{
+  display: flex;
+  justify-content: space-between;
+  padding: 3.52vw;
+  margin-right: 5vw;
+  margin-left: 18vw;
+}
+
+.testTitel {
+  color: white;
+  width: 20vw;
+  padding-top: 6vw;
+}
+
+.textTextButton{
+  width: 40vw;
+}
+
+.testText {
+  color: #232F3E;
+  width: 45vw;
+  margin-bottom: 2vw;
+}
+
 .firstNameLabel{
   margin-right: 2vw;
 }

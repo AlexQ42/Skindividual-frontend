@@ -21,15 +21,15 @@ const EventDescriptionFaq = () => {
             <div className="eventDescriptionContent">
                 <div className="detail1">
                     <h5 className="title">Vorteile</h5>
-                    <p className="text-start">{eventObject.description}</p>
+                    <span className="text-start">{eventObject.description}</span>
                 </div>
                 <div className="detail2">
                     <h5 className="title">Personen, die diese Behandlung vermeiden sollten:</h5>
-                    <p className="text-start">{eventObject.description}</p>
+                    <span className="text-start">{eventObject.description}</span>
                 </div>
                 <div className="detail2">
                     <h5 className="title">Wie schmerzhaft ist die Behandlung?</h5>
-                    <p className="text-start">{eventObject.description}</p>
+                    <span className="text-start">{eventObject.description}</span>
                 </div>
             </div>
         </div>

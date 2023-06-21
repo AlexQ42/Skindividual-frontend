@@ -6,13 +6,14 @@ export function getEventList(query)
 }
 
 export async function getEventByID(id)
-{
-    try {
-        const response = await axiosInstance.get('/events/'+id);
-        return response.data;
-
-    } catch (error) {
-        console.error(error);
-        return null;
-    }
+{   return axiosInstance.get('/events/'+id).then((response) =>
+        {
+            return response.data;
+        },
+        (error) =>
+        {
+            console.error(error);
+            return null;
+        }
+    )
 }

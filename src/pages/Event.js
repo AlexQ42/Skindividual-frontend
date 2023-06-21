@@ -1,25 +1,34 @@
-import EventBoxList from "../components/EventBoxList";
 import {useParams} from "react-router-dom";
 import {useEffect, useRef, useState} from "react";
-import {getEventByID, getEventList} from "../api/EventAccessor";
+import {getEventByID} from "../api/EventAccessor";
 import imageMicroneedling from "../assets/imageMicroneedling.svg";
+import karte from "../assets/karte.svg";
 import SkinTypeTag from "../components/SkinTypeTag";
 import EventDescription from "../components/EventDescription";
 import EventBoxListContainer from "../components/EventBoxListContainer";
+import ReviewOverview from "../components/ReviewOverview";
 
 const Event =  () => {
 
     const { id } = useParams();
     const [eventObject, setEventObject] = useState([]);
+    const [reviews, setReviews] = useState([]);
     const [ticketCounterValue, setTicketCounterValue] = useState(1);
     const ticketCounter = useRef(null);
 
 
     useEffect(() => {
-        async function fetchData()
+        function fetchData()
         {
-            const result = await getEventByID(id);
-            result !== [] ? setEventObject(result[0]) : setEventObject([]);
+            getEventByID(id).then((result) =>
+                {
+                    result !== [] ? setEventObject(result[0]) : setEventObject([]);
+                    console.log(result);
+                    setReviews(result[0].reviews);
+                    console.log(reviews);
+                }
+            )
+
         }
         fetchData();}, [id]);
 
@@ -49,20 +58,22 @@ const Event =  () => {
     return (
         <div id="eventPage">
             <div className="eventPageContent flexLeft">
-                <img className="eventPageImage" src={imageMicroneedling} alt=""></img>
-                <div className="eventInfoContainer container-fluid">
+                <div className="eventImage">
+                    <img className="eventPageImage" src={imageMicroneedling} alt=""></img>
+                </div>
+                <div className="eventInfoContainer">
                     <h2>{eventObject.name}</h2>
                     <SkinTypeTag skinType={eventObject.skinType}/>
                     <h5 className="eventPageSubTitle">Ort:</h5>
-                    <p className="text-start">{getAddress(eventObject.place)}</p>
+                    <span className="text-start">{getAddress(eventObject.place)}</span>
                     <h5 className="eventPageSubTitle">Termin:</h5>
-                    <p>{new Date(eventObject.date).toLocaleDateString()}</p>
+                    <span>{new Date(eventObject.date).toLocaleDateString()}</span>
                     <div className="flexSpaceBetween">
                         <div>
                             <h5 className="eventPageSubTitle">Freie Plätze:</h5>
-                            <p className="text-start">{eventObject.availableSpots + " Plätze"}</p>
+                            <span className="text-start">{eventObject.availableSpots + " Plätze"}</span>
                         </div>
-                        <h3 className="priceEventBox eventPageSubTitle">{eventObject.price}€ <span> pro Person</span></h3>
+                        <span><h3 className="priceEventBox eventPageSubTitle">{eventObject.price}€<span> pro Person</span></h3></span>
                     </div>
                     <div className="amountInCart flexSpaceBetween">
                         <button className="button decrement" onClick={handleDecrementTickets}>-</button>
@@ -74,11 +85,23 @@ const Event =  () => {
                     </div>
                 </div>
             </div>
+            <div>
             <EventDescription/>
+            </div>
+            <div className= "flexSpaceBetween">
+                <div>
+                    <img className="eventPageImage" src={karte} alt=""></img>
+                </div>
+                <div>
+                    <ReviewOverview reviews={reviews}/>
+                </div>
+            </div>
+            <div>
             <h3 className="container-fluid">Andere Kunden interessierten sich auch für:</h3>
             <EventBoxListContainer class="container-fluid" query={"skintype="+(eventObject.skinType)+"&"} page={1} perPage={4} showPagination={false}/>
+            </div>
         </div>
-    );
+    )
 }
 
 export default Event;
