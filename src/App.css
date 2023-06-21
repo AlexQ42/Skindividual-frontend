@@ -792,6 +792,8 @@ h5 {
   border-color: lightgray;
   border-width: 0.2vw;
   padding: 2vw;
+
+
 }
 
 
@@ -868,12 +870,16 @@ h5 {
 .grid-container{
   display: grid;
   grid-template-areas: 'grid1 grid2';
+  margin-top: 1.25vw;
 }
 .grid1{
   margin-bottom: auto;
+  margin-right: -2vw;
+  padding-left: 1vw;
 }
 .grid2{
-  margin-bottom: 1rem;
+  padding-bottom:8rem;
+  padding-left: 0vw;
 
 }
 
@@ -881,7 +887,6 @@ h5 {
   background-color: white;
   border-width: 0vw;
   margin-left: 1vw;
-
 }
 
 

@@ -112,9 +112,28 @@ const FormCheckOut = () => {
                         <p> Hier ist die Summe</p>
                     </label>
                     <p></p>
-                    <button type="button" className="button btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                    <button type="button" className="button btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                         Kaufen
                     </button>
+                    <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel"
+                         aria-hidden="true">
+                        <div className="modal-dialog modal-dialog-centered">
+                            <div className="modal-content">
+                                <div className="modal-header">
+                                    <h1 className="modal-title fs-5" id="exampleModalLabel">Vielen Dank für deinen Einkauf!</h1>
+                                    <button type="button" className="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                </div>
+                                <div className="modal-body">
+                                    Du bekommst in Kürze eine E-Mail mit deinem Ticket.
+                                </div>
+                                <div className="modal-footer">
+                                    <button type="button" className="btn btn-secondary Danke" data-bs-dismiss="modal">Danke!
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
