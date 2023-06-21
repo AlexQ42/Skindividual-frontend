@@ -736,7 +736,7 @@ h5 {
 /*Skin Type banner*/
 
 .skinTypeTestBanner {
-  background-image: url('/Users/mailinh/Documents/git/skindividual-frontend/src/assets/testpic.svg');
+  background-image: url('./assets/testpic.svg');
 }
 
 .testBannerInner{
