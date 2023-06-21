@@ -1,11 +1,11 @@
+import FormCheckOut from "../components/FormCheckOut";
 
 
 const Checkout =  () => {
 
     return (
         <div id="checkoutPage">
-            <input id="inputEmail" type="text"/>
-            <input id="inputPassword" type="password"/>
+           <FormCheckOut />
         </div>
     );
 }
