@@ -8,6 +8,7 @@ import EventDescription from "../components/EventDescription";
 import EventBoxListContainer from "../components/EventBoxListContainer";
 import ReviewOverview from "../components/ReviewOverview";
 
+
 const Event =  () => {
 
     const { id } = useParams();
