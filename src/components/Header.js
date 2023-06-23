@@ -4,8 +4,6 @@ import cart from "../assets/cart.png"
 
 const Header =  ({user}) => {
 
-    console.log(user);
-
     return (
         <div id="header" className="container-fluid">
             <div className="flexSpaceBetween headerContainer">

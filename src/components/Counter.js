@@ -1,16 +1,24 @@
 import React, {useRef, useState} from 'react';
 
 
-const Counter = () =>{
-    const [ticketCounterValue, setTicketCounterValue] = useState(1);
+const Counter = ({initialValue, counterCallback}) =>{
+    const [ticketCounterValue, setTicketCounterValue] = useState(initialValue ?? 1);
     const ticketCounter = useRef(null);
 
     function handleIncrementTickets() {
-        if(ticketCounterValue < 10) setTicketCounterValue(ticketCounterValue+1);
+        if(ticketCounterValue < 10)
+        {
+            counterCallback(ticketCounterValue+1);
+            setTicketCounterValue(ticketCounterValue+1);
+        }
     }
 
     function handleDecrementTickets() {
-        if(ticketCounterValue > 1) setTicketCounterValue(ticketCounterValue-1);
+        if(ticketCounterValue > 1)
+        {
+            counterCallback(ticketCounterValue-1);
+            setTicketCounterValue(ticketCounterValue-1);
+        }
     }
 
     return(

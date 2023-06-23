@@ -41,6 +41,13 @@ p {
   justify-content: left;
 }
 
+.flexRight {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: right;
+}
+
 .flexEventList {
   display: flex;
   flex-direction: row;
@@ -676,9 +683,6 @@ h5 {
   height: 3.5vw;
 }
 
-.amountInCart {
-  margin-top: 1.3vw;
-}
 
 .eventDescriptionSelection {
   margin: 1vw 0;
@@ -901,8 +905,7 @@ h5 {
   display: flex;
   border-color: #9ea4a4;
   padding: 2vw;
-  margin: 2vw;
-  margin-left: 0vw;
+  margin: 2vw 0 2vw 0;
   width: 92vw;
   height: 15vw;
 }
@@ -938,5 +941,24 @@ h5 {
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-left: 20vw;
+  justify-content: center;
+  height: 100%;
+  margin-right: 2vw;
+}
+
+.toCheckoutButton {
+  margin-bottom: 2vw;
+  margin-top: 2vw;
+}
+
+.widthInherit {
+  width: inherit;
+}
+
+.cartItemMargin {
+  margin: 2vw 1vw;
+}
+
+.buttonImageNoMargin {
+  margin: 0;
 }

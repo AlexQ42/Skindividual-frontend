@@ -2,7 +2,7 @@ import axiosInstance from "./AxiosInstance";
 
 export function getEventList(query)
 {
-    return axiosInstance.get(query).then((response) => {console.log(response); return response})
+    return axiosInstance.get(query).then((response) => {return response})
 }
 
 export async function getEventByID(id)
@@ -30,7 +30,6 @@ export function calculateAverageRating(event)
             if(array[i].value !== undefined && array[i].value !== null) result += array[i].value;
         }
         result = result/event.reviews.length;
-        console.log(result);
         return result.toFixed(1);
     }
     return 0.0.toFixed(1);

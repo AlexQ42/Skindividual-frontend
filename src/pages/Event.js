@@ -7,6 +7,7 @@ import SkinTypeTag from "../components/SkinTypeTag";
 import EventDescription from "../components/EventDescription";
 import EventBoxListContainer from "../components/EventBoxListContainer";
 import ReviewOverview from "../components/ReviewOverview";
+import {putInCart} from "../api/CartService";
 
 
 const Event =  () => {
@@ -23,10 +24,8 @@ const Event =  () => {
             getEventByID(id).then((result) =>
                 {
                     result !== [] ? setEventObject(result[0]) : setEventObject([]);
-                    console.log(result);
                 }
             )
-
         }
         fetchData();}, [id]);
 
@@ -77,7 +76,7 @@ const Event =  () => {
                         <button className="button decrement" onClick={handleDecrementTickets}>-</button>
                         <input className="amountInput" ref={ticketCounter} readOnly type="text" value={ticketCounterValue} min="1" max="10"/>
                         <button className="button increment" onClick={handleIncrementTickets}>+</button>
-                        <button className="button inCartButton">
+                        <button className="button inCartButton" onClick={() => putInCart(eventObject, ticketCounterValue)}>
                            In den Warenkorb
                         </button>
                     </div>

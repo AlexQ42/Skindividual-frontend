@@ -4,12 +4,32 @@ import payPal from "../assets/PayPal.svg"
 import klarna from "../assets/Klarna.svg"
 import visa from "../assets/visa.svg"
 import masterCard from "../assets/MasterCard.svg"
+import {postOrder} from "../api/OrderAccessor";
+import {getCart} from "../api/CartService";
 //import Popup from 'reactjs-popup';
 
 
 
 
 const FormCheckOut = () => {
+    function handleCheckout() {
+        postOrder(() => {
+            let order = {};
+            let cart = getCart();
+            if(cart !== [])
+            {
+                let event_id = 0;
+                cart.forEach((element) =>
+                {
+                    event_id = element.event.id.toString();
+                    order[event_id] = element.amount.toString();
+                })
+                console.log(order);
+                return order;
+            }
+        });
+    }
+
     return (
         <div className="grid-container">
             <div className="formular grid1">
@@ -112,7 +132,7 @@ const FormCheckOut = () => {
                         <p> Hier ist die Summe</p>
                     </label>
                     <p></p>
-                    <button type="button" className="button btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <button type="button" className="button btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" onClick={handleCheckout}>
                         Kaufen
                     </button>
                     <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel"
