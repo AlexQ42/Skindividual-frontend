@@ -1,15 +1,13 @@
 import React, {useEffect, useState} from 'react';
 import CartEventItem from "../components/CartEventItem";
-import cartThumbnail from "../assets/cartThumbnail.svg";
+import cartThumbnail from "../assets/cartThumbnail.png";
 import {getCart} from "../api/CartService";
 
 
 const CartContent = () => {
 
-    let component = this;
 
     const [cartObjects, setCartObjects] = useState([]);
-    const [updateState, setUpdateState] = useState(0);
 
 
     useEffect(() => {

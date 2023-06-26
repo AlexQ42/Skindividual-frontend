@@ -1,5 +1,5 @@
 import {useParams} from "react-router-dom";
-import {useEffect, useRef, useState} from "react";
+import React, {useEffect, useRef, useState} from "react";
 import {getEventByID} from "../api/EventAccessor";
 import imageMicroneedling from "../assets/imageMicroneedling.svg";
 import karte from "../assets/karte.svg";
@@ -76,9 +76,27 @@ const Event =  () => {
                         <button className="button decrement" onClick={handleDecrementTickets}>-</button>
                         <input className="amountInput" ref={ticketCounter} readOnly type="text" value={ticketCounterValue} min="1" max="10"/>
                         <button className="button increment" onClick={handleIncrementTickets}>+</button>
-                        <button className="button inCartButton" onClick={() => putInCart(eventObject, ticketCounterValue)}>
-                           In den Warenkorb
+                        <button className="button inCartButton" onClick={() => putInCart(eventObject, ticketCounterValue)} data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            In den Warenkorb
                         </button>
+                        <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel"
+                             aria-hidden="true">
+                            <div className="modal-dialog modal-dialog-centered">
+                                <div className="modal-content">
+                                    <div className="modal-header">
+                                        <h1 className="modal-title fs-5" id="exampleModalLabel">Warenkorb</h1>
+                                        <button type="button" className="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                    </div>
+                                    <div className="modal-body">
+                                        Erfolgreich zum Warenkorb hinzugefügt!
+                                    </div>
+                                    <div className="modal-footer">
+                                        <button type="button" className="btn button grey" data-bs-dismiss="modal">Ok</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

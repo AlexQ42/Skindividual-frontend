@@ -16,7 +16,13 @@ const Account = () => {
 
     useEffect( () => {
         function fetchData() {
-            getUser().then((response) => setUser(response))
+            getUser().then((response) => {
+                setUser(response);
+                skinTypeField.current.value = response.skinType;
+                firstnameField.current.value = response.firstname;
+                lastnameField.current.value = response.lastname;
+                emailField.current.value = response.email;
+            })
         }
         fetchData();
     }, []);
@@ -66,8 +72,8 @@ const Account = () => {
                         <label htmlFor="Email">E-Mail-Adresse</label><br/>
                         <input className="form-control formField skinTypeInput" ref={emailField} type="email" name="Email" defaultValue={user !== null? user.email : ""}/><br/>
                         <label htmlFor="SkinType">Hauttyp</label><br/>
-                        <select ref={skinTypeField} name="SkinType" value={user !== null && user.skinType !== "none" ? user.skinType : ""} className="form-select dropdown skinTypeDropdown" aria-label="Select skin type">
-                            <option defaultValue="" value="">keine Angabe</option>
+                        <select ref={skinTypeField} name="SkinType" defaultValue={user !== null && user.skinType !== "none" ? user.skinType : ""} className="form-select dropdown skinTypeDropdown" aria-label="Select skin type">
+                            <option value="">keine Angabe</option>
                             <option value="normal">normal</option>
                             <option value="oily">ölig</option>
                             <option value="combination">Mischhaut</option>

@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 import React from 'react';
 import payPal from "../assets/PayPal.svg"
 import klarna from "../assets/Klarna.svg"
@@ -6,28 +6,44 @@ import visa from "../assets/visa.svg"
 import masterCard from "../assets/MasterCard.svg"
 import {postOrder} from "../api/OrderAccessor";
 import {getCart} from "../api/CartService";
+import {getUser} from "../api/UserAccessor";
 //import Popup from 'reactjs-popup';
 
 
 
 
 const FormCheckOut = () => {
-    function handleCheckout() {
-        postOrder(() => {
-            let order = {};
-            let cart = getCart();
-            if(cart !== [])
+
+    const [user, setUser] = useState(null)
+
+
+    useEffect( () => {
+        function fetchData() {
+            getUser().then((response) => setUser(response))
+        }
+        fetchData();
+    }, []);
+
+
+    function handleCheckout()
+    {
+        console.log("Hallo")
+
+        let order = [];
+        let cart = getCart();
+        if(cart !== [])
+        {
+            let event_id = 0;
+            let amount = 0;
+            cart.forEach((element) =>
             {
-                let event_id = 0;
-                cart.forEach((element) =>
-                {
-                    event_id = element.event.id.toString();
-                    order[event_id] = element.amount.toString();
-                })
-                console.log(order);
-                return order;
-            }
-        });
+                event_id = element.event.id.toString();
+                amount = element.amount.toString();
+                order.push({event_id, amount});
+            })
+            postOrder(order);
+        }
+        console.log(order);
     }
 
     return (
@@ -55,18 +71,18 @@ const FormCheckOut = () => {
                 <div className="bottomForm">
                     <label className="firstNameLabel">
                         <p>Vorname:*</p>
-                        <input className="input" type="text" />
+                        <input className="input" type="text" defaultValue={user !== null? user.firstname : ""}/>
                     </label>
                     <label>
                         <p>Nachname:*</p>
-                        <input className="input" type="text" />
+                        <input className="input" type="text" defaultValue={user !== null? user.lastname : ""}/>
                     </label>
                 </div>
                 <p></p>
 
                 <label className="firstNameLabel">
                     <p> E-Mail:*</p>
-                    <input className="input" type="text" />
+                    <input className="input" type="text" defaultValue={user !== null? user.email : ""}/>
                 </label>
 
                 <label>
@@ -119,11 +135,11 @@ const FormCheckOut = () => {
                     </label>
                     <p></p>
                     <label className="Rabatt" style={{display:'flex'}}>
-                        <p>
+                        <div>
                             <h4> Rabatt </h4>
-                            <input className="input"type="text"/>
+                            <input className="input" type="text"/>
                             <button className="keinButton" style={{textDecoration:'underline black'}}> Rabatt anwenden </button>
-                        </p>
+                        </div>
 
                     </label>
                     <p></p>

@@ -4,13 +4,14 @@ import authHeader from "./AuthHeader";
 export async function getUser() {
   return axiosInstance.get("/users", {headers: authHeader()})
       .then(
-      (response) => response.data, (error) => {
+      (response) => {        console.log(response.data); return response.data}, (error) => {
         console.error(error);
         return null;
       });
 }
 
 export function patchUser(firstname, lastname, email, skinType) {
+    console.log(firstname, lastname, email, skinType);
     return axiosInstance.patch("/users", {
       firstname,
       lastname,

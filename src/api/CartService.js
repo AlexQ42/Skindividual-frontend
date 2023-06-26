@@ -6,15 +6,24 @@ export function putInCart(event, amount)
         cart = JSON.parse(localStorage.getItem("cart"));
     }
 
-    let oldEvent = cart.find((object) => {return object.event.id === event.id})
-    if(oldEvent === undefined)
+    console.log(cart);
+
+    if(cart !== [])
     {
+        let oldEvent = cart.find((object) => {return object.event.id === event.id})
+        if(oldEvent === undefined)
+        {
+            cart.push({event, amount})
+            localStorage.setItem("cart", JSON.stringify(cart));
+        }
+        else
+        {
+            changeAmountInCart(event, oldEvent.amount+amount)
+        }
+    }
+    else {
         cart.push({event, amount})
         localStorage.setItem("cart", JSON.stringify(cart));
-    }
-    else
-    {
-        changeAmountInCart(event, oldEvent.amount+amount)
     }
 }
 
@@ -55,7 +64,7 @@ export function changeAmountInCart(event, newAmount)
 
 export function getCartTotal()
 {
-    let cart = getCart();
+    let cart = getCart() ?? [];
     let total = 0;
     cart.forEach((element) => {
         total += (element.event.price * element.amount)
@@ -65,5 +74,5 @@ export function getCartTotal()
 
 export function emptyCart()
 {
-    localStorage.setItem("cart", null);
+    localStorage.setItem("cart", JSON.stringify([]));
 }

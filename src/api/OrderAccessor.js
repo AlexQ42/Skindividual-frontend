@@ -1,9 +1,13 @@
 import axiosInstance from "./AxiosInstance";
 import {emptyCart} from "./CartService";
+import authHeader from "./AuthHeader";
 
 export function postOrder(order)
 {
-    return axiosInstance.post("/users", order).then((response) => {
+    return axiosInstance.post("/orders", {
+        order
+    }, {headers: authHeader()}).then((response) => {
+        console.log(order)
         emptyCart();
         return response.data;
     }, (error) => {
