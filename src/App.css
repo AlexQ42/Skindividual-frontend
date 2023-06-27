@@ -843,7 +843,7 @@ h5 {
 .Rabatt{
   margin-top: 2vw;
   border-style: solid;
-  border-color: lightgray;
+  border-color: transparent;
   border-radius:0.8vw;
   border-width: 0.2vw;
   padding: 0.5vw;
@@ -852,7 +852,7 @@ h5 {
 }
 
 .Summe{
-  margin-top:2vw;
+  margin: 1vw 2vw;
 }
 
 .bImage{
@@ -992,4 +992,27 @@ h5 {
 
 .marginTop {
   margin-top: 1.45vw;
+}
+
+.checkoutEventBox {
+  padding: 1vw;
+}
+
+.sumBox {
+  padding: 1vw;
+}
+
+.borderTop {
+  border-top: 0.2vw solid #c7c7c7;
+  padding-top: 0.3vw;
+}
+
+.applyDiscountLink {
+  margin: 0 1vw;
+  text-decoration: underline;
+}
+
+.biggerText {
+  font-size: 1.8vw;
+  font-weight: bold;
 }

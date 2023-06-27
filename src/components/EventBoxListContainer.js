@@ -38,7 +38,6 @@ function EventBoxListContainer({query, showPagination, page, perPage}) {
             },
                 (error) =>
                 {
-                    console.log("Hi");
                     console.log(error);
                     const resMessage =
                         (

@@ -9,8 +9,6 @@ const ReviewOverview = ({event}) => {
 
     function calculateReviewBar(stars)
     {
-        console.log("Hi")
-        console.log(event)
         if(event.reviews !== undefined) {
             let reviews = event.reviews;
             let counter = 0;

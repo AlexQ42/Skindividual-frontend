@@ -7,7 +7,6 @@ export function postOrder(order)
     return axiosInstance.post("/orders", {
         order
     }, {headers: authHeader()}).then((response) => {
-        console.log(order)
         emptyCart();
         return response.data;
     }, (error) => {

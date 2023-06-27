@@ -5,8 +5,12 @@ import klarna from "../assets/Klarna.svg"
 import visa from "../assets/visa.svg"
 import masterCard from "../assets/MasterCard.svg"
 import {postOrder} from "../api/OrderAccessor";
-import {getCart} from "../api/CartService";
+import {getCart, getCartTotal} from "../api/CartService";
 import {getUser} from "../api/UserAccessor";
+import EventBox from "./EventBox";
+import {get} from "axios";
+import Checkout from "../pages/Checkout";
+import CheckoutEventBox from "./CheckoutEventBox";
 //import Popup from 'reactjs-popup';
 
 
@@ -27,8 +31,6 @@ const FormCheckOut = () => {
 
     function handleCheckout()
     {
-        console.log("Hallo")
-
         let order = [];
         let cart = getCart();
         if(cart !== [])
@@ -43,7 +45,12 @@ const FormCheckOut = () => {
             })
             postOrder(order);
         }
-        console.log(order);
+    }
+
+    function showCartContentList() {
+        let cart = getCart() ?? [];
+        return <div> {cart.length > 0 ? cart.map((ticket, i) => <CheckoutEventBox key={i} ticket={ticket}></CheckoutEventBox>)
+            : <p className="emptyListText">nichts im Warenkorb</p>}</div>
     }
 
     return (
@@ -63,9 +70,9 @@ const FormCheckOut = () => {
                         <input className="input radioB radioBMann"
                                type="radio"
                                name="option"
-                               value="Mann"
+                               value="Herr"
                         />
-                        Mann
+                        Herr
                     </label>
                 </p>
                 <div className="bottomForm">
@@ -130,26 +137,31 @@ const FormCheckOut = () => {
             <div className="grid2 ">
                 <div className="SummeBox secondContainer">
                     <h3> Bestellübersicht </h3>
-                    <label className="eventBox produktPadding">
-                        Hier kommt unser Produkt rein
-                    </label>
-                    <p></p>
-                    <label className="Rabatt" style={{display:'flex'}}>
+                    {
+                        showCartContentList()
+                    }
+                    <label className="Rabatt eventBox sumBox" style={{display:'flex'}}>
                         <div>
                             <h4> Rabatt </h4>
                             <input className="input" type="text"/>
-                            <button className="keinButton" style={{textDecoration:'underline black'}}> Rabatt anwenden </button>
+                            <button className="keinButton notRegisteredLink applyDiscountLink"> Rabatt anwenden </button>
                         </div>
 
                     </label>
-                    <p></p>
-                    <label className="Summe">
+                    <br/>
+                    <div className="eventBox sumBox">
                         <h4>Summe</h4>
-                        <p> Hier ist die Summe</p>
-                    </label>
-                    <p></p>
+                        <div className="Summe flexSpaceBetween">
+                            <span>Bestellwert:</span> <span>{getCartTotal()}€</span>
+                        </div>
+                        <div className="Summe flexSpaceBetween bigText borderTop">
+                            <span>Gesamtsumme:</span> <span>{getCartTotal()}€</span>
+                        </div>
+                    </div>
+                </div>
+                <div className="flexRight marginTop">
                     <button type="button" className="button btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" onClick={handleCheckout}>
-                        Kaufen
+                        Jetzt kaufen
                     </button>
                     <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel"
                          aria-hidden="true">

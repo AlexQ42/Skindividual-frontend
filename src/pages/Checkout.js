@@ -5,6 +5,8 @@ const Checkout =  () => {
 
     return (
         <div id="checkoutPage">
+            <br/>
+            <h2>Bestellung abschließen</h2>
            <FormCheckOut />
         </div>
     );

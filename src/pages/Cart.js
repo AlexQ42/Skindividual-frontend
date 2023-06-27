@@ -15,11 +15,12 @@ const Cart =  () => {
     return (
         <div id="cartPage">
             <CartContent />
-            <div className="flexRight">
-                <p>Gesamtsumme: <span>{cartTotal}</span> €</p>
+            <br/>
+            <div className="flexSpaceBetween borderTop sumBox">
+                <span className="biggerText">Gesamtsumme: </span><span className="biggerText">{cartTotal}€</span>
             </div>
             <div className="flexRight toCheckoutButton">
-                <Link className="button headerButton" to="/checkout">Zur Kasse</Link>
+                <Link to="/checkout"><button className="button headerButton">Zur Kasse</button></Link>
             </div>
         </div>
     );

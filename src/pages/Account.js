@@ -37,7 +37,6 @@ const Account = () => {
 
     function handleSaveChanges()
     {
-        console.log("hello");
         patchUser(firstnameField.current.value, lastnameField.current.value, emailField.current.value, skinTypeField.current.value)
             .then((response) =>
                 {
