@@ -35,7 +35,7 @@ const EventDescription = () => {
 
     return (
         <div className="eventDescription">
-            <div className="eventDescriptionSelection">
+            <div className="eventDescriptionSelection flexSpaceBetween">
                 <div className="btn-group btn-group-toggle" data-toggle="buttons">
                     <input type="radio" className="btn-check" name="options" id="option1" autoComplete="off" defaultChecked={true} onClick={(e) => handleClick("detail")}></input>
                     <label className="btn btn-secondary eventDescriptionDetail" htmlFor="option1" >Details</label>

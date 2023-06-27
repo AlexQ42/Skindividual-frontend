@@ -660,17 +660,12 @@ h5 {
 
 /*Eventseite*/
 
-
-.decrement {
-  margin-right: 0.7vw;
-}
-
 .increment {
   margin-right: 0.7vw;
 }
 
 .inCartButton {
-  width: 30vw;
+  width: 33vw;
 }
 
 .amountInput {
@@ -735,39 +730,61 @@ h5 {
   margin-top: 1vw;
 }
 
-.reviewOverviewInner {
-  border: 0.7vw #232F3E;
-  width: 30vw;
-  height: 2vw;
+.cardImage {
+  width: 44vw;
+  height: 22.75vw;
+  border-radius: 0.8vw;
+  object-fit: cover;
+  box-shadow: 0.3vw 0.3vw 0.3vw #b2b2b2;
+}
+
+.cardReviewComponent
+{
+  margin-bottom: 3vw;
+}
+
+/*Review content*/
+.contentReview {
+  border-style: solid;
+  border-color: #c5c5c5;
+  box-shadow: 0.3vw 0.3vw 0.3vw #b2b2b2;
+  border-radius: 0.8vw;
+  width: 45vw;
+  padding: 2vw;
+}
+
+.progress {
+  margin-top: 0.3vw;
+  width: 39vw;
+}
+
+.bar {
+  margin-bottom: 0.5vw;
+}
+
+.reviewCounter {
+  margin-bottom: 1vw;
+}
+
+.smallText {
+  font-size: smaller;
 }
 
 /*Skin Type banner*/
-
-.skinTypeTestBanner {
-  background-image: url('./assets/testpic.svg');
-}
-
-.testBannerInner{
+.bannerBackground{
   display: flex;
   justify-content: space-between;
-  padding: 3.52vw;
-  margin-right: 5vw;
-  margin-left: 18vw;
+  height: 20vw;
+  border-radius: 0.8vw;
+  background: #AAC8D6;
 }
 
-.testTitel {
-  color: white;
-  width: 20vw;
-  padding-top: 6vw;
-}
-
-.textTextButton{
-  width: 40vw;
+.bannerText{
+  color: #232F3E;
+  margin: 3vw 3vw 3vw 0;
 }
 
 .testText {
-  color: #232F3E;
-  width: 45vw;
   margin-bottom: 2vw;
 }
 

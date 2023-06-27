@@ -103,9 +103,9 @@ const Event =  () => {
             <div>
             <EventDescription/>
             </div>
-            <div className= "flexSpaceBetween">
-                <div>
-                    <img className="eventPageImage" src={karte} alt=""></img>
+            <div className= "cardReviewComponent flexSpaceBetween">
+                <div className="cardPageImage">
+                    <img className="cardImage" src={karte} alt=""></img>
                 </div>
                 <div>
                     <ReviewOverview event={eventObject}/>
