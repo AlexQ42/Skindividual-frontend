@@ -54,6 +54,7 @@ const Event =  () => {
 
     return (
         <div id="eventPage">
+            <br/>
             <div className="eventPageContent flexLeft">
                 <div className="eventImage">
                     <img className="eventPageImage" src={imageMicroneedling} alt=""></img>
@@ -70,9 +71,9 @@ const Event =  () => {
                             <h5 className="eventPageSubTitle">Freie Plätze:</h5>
                             <span className="text-start">{eventObject.availableSpots + " Plätze"}</span>
                         </div>
-                        <span><h3 className="priceEventBox eventPageSubTitle">{eventObject.price}€<span> pro Person</span></h3></span>
+                        <span className="marginTop"><h3 className="priceEventBox eventPageSubTitle">{eventObject.price}€<span> pro Person</span></h3></span>
                     </div>
-                    <div className="amountInCart flexSpaceBetween">
+                    <div className="amountInCart flexSpaceBetween marginTop">
                         <button className="button decrement" onClick={handleDecrementTickets}>-</button>
                         <input className="amountInput" ref={ticketCounter} readOnly type="text" value={ticketCounterValue} min="1" max="10"/>
                         <button className="button increment" onClick={handleIncrementTickets}>+</button>
@@ -112,8 +113,8 @@ const Event =  () => {
                 </div>
             </div>
             <div>
-            <h3 className="container-fluid">Andere Kunden interessierten sich auch für:</h3>
-            <EventBoxListContainer class="container-fluid" query={"skintype="+(eventObject.skinType)+"&"} page={1} perPage={4} showPagination={false}/>
+                <h3 className="container-fluid">Andere Kunden interessierten sich auch für:</h3><br/>
+                <EventBoxListContainer class="container-fluid" query={"skintype="+(eventObject.skinType)+"&"} page={1} perPage={4} showPagination={false}/><br/>
             </div>
         </div>
     )

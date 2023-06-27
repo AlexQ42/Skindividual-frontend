@@ -665,7 +665,7 @@ h5 {
 }
 
 .inCartButton {
-  width: 33vw;
+  width: 30.2vw;
 }
 
 .amountInput {
@@ -690,19 +690,19 @@ h5 {
 .eventDescriptionDetail {
   --bs-btn-active-bg: #B5C7C5;
   --bs-btn-bg: #D9D9D9;
-  width: 31vw;
+  width: 30.7vw;
 }
 
 .eventDescriptionExpert {
   --bs-btn-active-bg: #B5C7C5;
   --bs-btn-bg: #D9D9D9;
-  width: 31vw;
+  width: 30.75vw;
 }
 
 .eventDescriptionFaq {
   --bs-btn-active-bg: #B5C7C5;
   --bs-btn-bg: #D9D9D9;
-  width: 31vw;
+  width: 30.7vw;
 }
 
 .eventDescriptionBox {
@@ -731,11 +731,12 @@ h5 {
 }
 
 .cardImage {
-  width: 44vw;
+  width: 45vw;
   height: 22.75vw;
   border-radius: 0.8vw;
   object-fit: cover;
-  box-shadow: 0.3vw 0.3vw 0.3vw #b2b2b2;
+  border-color: transparent;
+  box-shadow: 2px 2px 5px #b9b9b9;
 }
 
 .cardReviewComponent
@@ -746,16 +747,16 @@ h5 {
 /*Review content*/
 .contentReview {
   border-style: solid;
-  border-color: #c5c5c5;
-  box-shadow: 0.3vw 0.3vw 0.3vw #b2b2b2;
+  border-color: transparent;
+  box-shadow: 2px 2px 5px #b9b9b9;
   border-radius: 0.8vw;
-  width: 45vw;
+  width: 44vw;
   padding: 2vw;
 }
 
 .progress {
   margin-top: 0.3vw;
-  width: 39vw;
+  width: 37.5vw;
 }
 
 .bar {
@@ -767,7 +768,12 @@ h5 {
 }
 
 .smallText {
-  font-size: smaller;
+  font-size: 1.1vw;
+}
+
+.bigText {
+  font-size: 1.4vw;
+  font-weight: bold;
 }
 
 /*Skin Type banner*/
@@ -978,4 +984,12 @@ h5 {
 
 .buttonImageNoMargin {
   margin: 0;
+}
+
+.green {
+  background-color: #B6C7B9;
+}
+
+.marginTop {
+  margin-top: 1.45vw;
 }
