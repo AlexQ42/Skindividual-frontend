@@ -1,12 +1,12 @@
 import React, {useRef, useState} from 'react';
 
 
-const Counter = ({initialValue, counterCallback}) =>{
+const Counter = ({initialValue, counterCallback, upperLimit}) =>{
     const [ticketCounterValue, setTicketCounterValue] = useState(initialValue ?? 1);
     const ticketCounter = useRef(null);
 
     function handleIncrementTickets() {
-        if(ticketCounterValue < 10)
+        if(ticketCounterValue < 10 && ticketCounterValue < upperLimit)
         {
             counterCallback(ticketCounterValue+1);
             setTicketCounterValue(ticketCounterValue+1);

@@ -34,7 +34,7 @@ const CartEventItem = ({event, amount}) => {
                        <SkinTypeTag skinType={event.skinType}/>
                    </div>
                     <div className="counter cartItemMargin">
-                        <Counter initialValue={amount} counterCallback={counterCallback}/>
+                        <Counter initialValue={amount} counterCallback={counterCallback} upperLimit={event.availableSpots ?? 1}/>
                     </div>
                     <button className="button"><img onClick={() => handleDelete()} className="buttonImage buttonImageNoMargin" src={bin} alt="löschen"></img></button>
                     <h4 className="priceEventBox counter">{event.price}€ <span>/ Person</span> </h4>

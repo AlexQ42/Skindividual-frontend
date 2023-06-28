@@ -45,7 +45,7 @@ const Event =  () => {
     }
 
     function handleIncrementTickets() {
-        if(ticketCounterValue < 10) setTicketCounterValue(ticketCounterValue+1);
+        if(ticketCounterValue < 10 && ticketCounterValue < eventObject.availableSpots) setTicketCounterValue(ticketCounterValue+1);
     }
 
     function handleDecrementTickets() {
