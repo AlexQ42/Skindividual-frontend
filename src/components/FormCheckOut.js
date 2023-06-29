@@ -64,7 +64,7 @@ const FormCheckOut = () => {
                                value="Frau"
                                defaultChecked={true}
                         />
-                        Frau
+                        <span className="qq">Frau</span>
                     </label>
                     <label>
                         <input className="input radioB radioBMann"
@@ -72,7 +72,7 @@ const FormCheckOut = () => {
                                name="option"
                                value="Herr"
                         />
-                        Herr
+                        <span className="qq">Herr</span>
                     </label>
                 </p>
                 <div className="bottomForm">

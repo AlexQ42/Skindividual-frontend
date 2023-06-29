@@ -876,6 +876,7 @@ h5 {
   border: 0px;
   width: 1.5vw;
   height: 1.5vw;
+  margin-right: 0.5vw;
 }
 
 .spaceLeft{
@@ -1015,4 +1016,59 @@ h5 {
 .biggerText {
   font-size: 1.8vw;
   font-weight: bold;
+}
+
+/*Test*/
+
+.testTitle {
+  color: #EDEDED;
+}
+
+.bannerTestText {
+  margin: 3vw 8vw 3vw 0;
+  width: 45vw;
+}
+
+.bannerTest {
+  margin-bottom: 2vw;
+}
+
+.questionBorder {
+  border-style: solid;
+  border-color: transparent;
+  box-shadow: 2px 2px 5px #b9b9b9;
+  border-radius: 0.8vw;
+  margin-bottom: 2vw;
+}
+
+.questionPic {
+  border-radius: 0 0.8vw 0.8vw 0;
+  height: 26vw;
+}
+
+.tickQuestion {
+  margin-top: 1vw;
+}
+
+.questionContent {
+  width: 67vw;
+  padding: 3vw;
+}
+
+.radioQ{
+  width: 1.5vw;
+  height: 1.5vw;
+  margin-right: 1vw;
+}
+
+.questionBox {
+  margin-bottom: 0.5vw;
+}
+
+.buttonTest {
+  margin: 1vw 0 2vw 0;
+}
+
+.qq{
+  vertical-align: text-bottom;
 }
