@@ -1,7 +1,7 @@
 import './App.css';
 import Start from "./pages/Start";
 import Footer from "./components/Footer";
-import {BrowserRouter, Route, Routes} from "react-router-dom";
+import {BrowserRouter, Route, Routes, useLocation} from "react-router-dom";
 import About from "./pages/About";
 import Account from "./pages/Account";
 import Checkout from "./pages/Checkout";
@@ -15,6 +15,8 @@ import Header from "./components/Header";
 import {useEffect, useState} from "react";
 import AuthService from "./api/AuthService";
 import EventBus from "./api/EventBus";
+import ScrollToTop from "./components/ScrollToTop";
+
 
 function App() {
 
@@ -62,6 +64,7 @@ function App() {
                 </Routes>
             </div>
             <Footer/>
+            <ScrollToTop/>
         </BrowserRouter>
     </div>
   );

@@ -1,6 +1,7 @@
 const EventReviewsAverageTag = ({rating}) =>
 {
-    return (<p className="reviewSmall"><span>&#9733; </span>{rating === null? "0.0" : rating}</p>);
+    let isNull = (rating === null || rating < 1);
+    return (<p className={"reviewSmall "+(isNull? "noReviewsBackground" : "")}><span>&#9733; </span>{isNull? "" : rating}</p>);
 }
 
 export default EventReviewsAverageTag;

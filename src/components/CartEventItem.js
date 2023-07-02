@@ -4,6 +4,7 @@ import SkinTypeTag from "./SkinTypeTag";
 import Counter from "./Counter";
 import bin from "../assets/bin.png";
 import {changeAmountInCart, deleteFromCart} from "../api/CartService";
+import {Link} from "react-router-dom";
 
 
 
@@ -23,11 +24,11 @@ const CartEventItem = ({event, amount}) => {
     <div className="eventBox2 itemC">
         <img className="PicCart " src={ImgCart2} alt=""></img>
         <div className="flexSpaceBetween widthInherit">
-            <div className="heading">
+            <Link to={"/events/"+event.id} className="heading noLink">
                 <h2>{event.name}</h2>
                 <p>{event.place}</p>
                 <p>{new Date(event.date).toLocaleDateString()}</p>
-            </div>
+            </Link>
             <div>
                 <div  className="flexCart">
                    <div className="cartItemMargin">

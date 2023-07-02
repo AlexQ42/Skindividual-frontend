@@ -1,7 +1,7 @@
 import {useEffect, useRef, useState} from "react";
 import {getUser, patchUser} from "../api/UserAccessor";
 import AuthService from "../api/AuthService";
-import {useNavigate} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 
 
 const Account = () => {
@@ -79,7 +79,7 @@ const Account = () => {
                             <option value="dry">trocken</option>
                             <option value="sensitive">sensibel</option>
                         </select>
-                        <button className="button skinTypeTestButton">zum Hauttyptest</button>
+                        <Link to="/test" className="button skinTypeTestButton">zum Hauttyptest</Link>
                         {message !== ""? <p className={"alert alert-danger error"+(message === "Daten erfolgreich geändert." ? " positive" : "")}>{message}</p> : ""}
                     </div>
                     <div className="buttonContainer">
@@ -90,7 +90,7 @@ const Account = () => {
             </div>
             <div className="flexSpaceBetween">
                 <button className="button logoutButton" onClick={logout}>Ausloggen</button>
-                <button className="button logoutButton" >Account löschen</button>
+                <button className="button logoutButton">Account löschen</button>
             </div>
         </div>
     );

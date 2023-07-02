@@ -24,7 +24,9 @@ const EventBox = ({ eventObject }) => {
                         <p className="text-start">{resultEvent === null? "place" : resultEvent.place}</p>
                         <p>{resultEvent === null? "date" : new Date(resultEvent.date).toLocaleDateString()}</p>
                     </div>
-                    <div><EventReviewsAverageTag rating={calculateAverageRating(resultEvent)} /> </div>
+                    <div>
+                        <EventReviewsAverageTag rating={calculateAverageRating(resultEvent)} />
+                    </div>
                 </div>
 
                 <br/>

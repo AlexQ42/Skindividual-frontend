@@ -8,8 +8,7 @@ const About =  () => {
     return (
         <div id="aboutPage">
             <Carousel showButton={false} />
-            <br></br>
-            <h3 className="container-fluid headline">Unsere Philosophie</h3>
+            <h3 className="container-fluid headlineAbout">Unsere Philosophie</h3>
             <p className="aboutPageTextContainer">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est aliquyam erat.</p>
             <br></br>
             <h4 className="container-fluid headline">Individuelle Pflege</h4>

@@ -102,7 +102,7 @@ const EventListFilterContainer = () => {
                 <div className="dropdown dateDropdown">
                     <button type="button" className="btn btn-sm dropdown dropdown form-select-sm dateDropdownButton" data-bs-toggle="dropdown"
                             aria-expanded="false" data-bs-auto-close="outside">
-                        Datum wählen
+                        Datum
                     </button>
                     <form className="dropdown-menu p-4 dateDropdownForm">
                         <div className="mb-3">

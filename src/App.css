@@ -127,6 +127,10 @@ p {
   font-size: inherit;
 }
 
+.noReviewsBackground {
+  background-color: #d0d0d0;
+}
+
 .skinTypeTag {
   font-size: 1.2vw;
   border: 1px transparent;
@@ -157,6 +161,7 @@ h1 {
 h2 {
   font-size: 2.3vw;
   font-weight: bold;
+  margin-bottom: 0.5vw;
 }
 
 
@@ -176,7 +181,13 @@ h5 {
 }
 
 .headline {
-  margin: 2vw 0;
+  margin-top: 2vw;
+  margin-bottom: 0.5vw;
+}
+
+.headlineAbout {
+  margin-top: 3vw;
+  margin-bottom: 1.5vw;
 }
 
 .textRight{
@@ -231,6 +242,7 @@ h5 {
   border-radius: 0.8vw;
   background-color: #B5C7C5;
   padding: 0.6vw 1.5vw;
+  --bs-btn-active-bg: #B5C7C5;
 }
 
 .button:hover {
@@ -246,17 +258,22 @@ h5 {
 }
 
 .carousel {
-  margin: 1vw 0;
+  margin: 2vw 0;
+  border-radius: 0.8vw;
 }
 
 .carouselItem {
-  height: 60vh;
+  height: 40vw;
   border: 1px transparent;
   border-radius: 0.8vw;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   padding: 3vw;
+}
+
+.carousel-item, .carousel-inner {
+  border-radius: 0.8vw;
 }
 
 .carouselHeadline {
@@ -291,16 +308,19 @@ h5 {
 #carousel1 {
   background-image: url('assets/carousel1.svg');
   background-size: cover;
+  border-radius: 0.8vw;
 }
 
 #carousel2 {
   background-image: url('assets/carousel2.svg');
   background-size: cover;
+  border-radius: 0.8vw;
 }
 
 #carousel3 {
   background-image: url('assets/carousel3.svg');
   background-size: cover;
+  border-radius: 0.8vw;
 }
 
 .dropdown {
@@ -625,39 +645,6 @@ h5 {
   background-color: #9CB1CD;
 }
 
-@media  (max-width: 600px)
-{
-
-  .flexEventList {
-    flex-direction: column;
-  }
-
-  p, h4, .priceEventBox, .priceEventBox > span {
-    font-size: 3vw;
-  }
-
-  .skinTypeTag {
-    font-size: 2.4vw;
-  }
-
-  .eventBox {
-    width: 90vw;
-  }
-
-  .eventBoxContent {
-    width: 65vw;
-  }
-
-  .imageInBox {
-    width: 20rem;
-  }
-
-  #logo {
-    font-size: 4rem;
-  }
-}
-
-
 /*Eventseite*/
 
 .increment {
@@ -783,6 +770,7 @@ h5 {
   height: 20vw;
   border-radius: 0.8vw;
   background: #AAC8D6;
+  margin: 2vw 0;
 }
 
 .bannerText{
@@ -1071,4 +1059,49 @@ h5 {
 
 .qq{
   vertical-align: text-bottom;
+}
+
+.noLink {
+  color: black;
+  text-decoration: none;
+}
+
+.noLink:hover {
+  color: black;
+}
+
+@media  (max-width: 600px)
+{
+
+  .flexEventList {
+    flex-direction: column;
+  }
+
+  p, li, h4, .priceEventBox, .priceEventBox > span {
+    font-size: 3vw;
+  }
+
+  h3 {
+    font-size: 4vw;
+  }
+
+  .skinTypeTag {
+    font-size: 2.4vw;
+  }
+
+  .eventBox {
+    width: 90vw;
+  }
+
+  .eventBoxContent {
+    width: 65vw;
+  }
+
+  .imageInBox {
+    width: 20rem;
+  }
+
+  #logo {
+    font-size: 4rem;
+  }
 }
