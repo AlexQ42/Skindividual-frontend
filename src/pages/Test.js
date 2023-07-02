@@ -25,11 +25,11 @@ const Test =  () => {
                 <QuestionContainer7/>
             </div>
             <div className="buttonTest flexSpaceBetween">
-                <Link className="button carouselButton" to="/">
-                    <span>zurück zur Startseite</span>
+                <Link to="/">
+                    <button className="button">zurück zur Startseite</button>
                 </Link>
-                <Link className="button carouselButton" to="/Result">
-                    <span>Test auswerten</span>
+                <Link to="/Result">
+                    <button className="button">Test auswerten</button>
                 </Link>
             </div>
         </div>

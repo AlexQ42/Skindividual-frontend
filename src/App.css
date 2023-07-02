@@ -1061,6 +1061,35 @@ h5 {
   vertical-align: text-bottom;
 }
 
+.resultSkinTypeBox {
+  margin-bottom: 2vw;
+}
+
+.resultSkinType {
+  background: #9ea4a4;
+  border-radius: 0.8vw;
+}
+
+.resultTitle {
+  padding: 1vw 0 1vw 0;
+  color: #EDEDED;
+}
+
+.resultDescription {
+  border-style: solid;
+  border-color: #9ea4a4;
+  border-radius: 0.8vw;
+  border-width: 0.3vw;
+  padding: 3vw;
+}
+
+.resultAttribute {
+  margin-bottom: 2vw;
+}
+
+.resultSaveButton {
+  margin-top: 1vw;
+}
 .noLink {
   color: black;
   text-decoration: none;

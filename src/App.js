@@ -6,6 +6,7 @@ import About from "./pages/About";
 import Account from "./pages/Account";
 import Checkout from "./pages/Checkout";
 import Test from "./pages/Test";
+import Result from "./pages/Result";
 import Cart from "./pages/Cart";
 import Event from "./pages/Event";
 import Imprint from "./pages/Imprint";
@@ -61,6 +62,7 @@ function App() {
                     <Route path="/login" element={<Login />}></Route>
                     <Route path="/register" element={<Register />}></Route>
                     <Route path="/imprint" element={<Imprint />}></Route>
+                    <Route path="/result" element={<Result />}></Route>
                 </Routes>
             </div>
             <Footer/>
