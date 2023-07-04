@@ -13,6 +13,16 @@ input:focus, .form-control:focus {
   box-shadow: 0 0 10px #B5C7C5;
 }
 
+input {
+  border-style: solid;
+}
+
+input[type='radio'], input[type='radio']:focus {
+  filter: grayscale(90%) contrast(80%);
+  box-shadow: none;
+  background-color: #EDEDED;
+}
+
 ::selection {
   color: #fff;
   background: #B5C7C5;
@@ -816,14 +826,13 @@ h5 {
 
 .Pflichtfeld{
   font-size: 1vw;
+  margin-top: 2vw;
 }
 
 .input{
-  background-color: lightgray;
+  background-color: #EDEDED;
   border-radius:0.8vw;
-  border-width: 0.18vw;
-  border-style: solid;
-  border-color: darkgrey;
+  border-color: transparent;
   padding-left: 1vw;
   padding-right: 1vw;
 }
@@ -832,7 +841,7 @@ h5 {
   border-style: solid;
   border-radius:0.8vw;
   border-color: lightgray;
-  border-width: 0.2vw;
+  border-width: 0.1vw;
   padding: 2vw;
 
 
@@ -843,7 +852,7 @@ h5 {
   border-style: solid;
   border-radius:0.8vw;
   border-color: lightgray;
-  border-width: 0.2vw;
+  border-width: 0.1vw;
   padding: 2vw;
   margin-left: 3vw;
 }
@@ -852,13 +861,13 @@ h5 {
 }
 
 .Rabatt{
-  margin-top: 2vw;
   border-style: solid;
   border-color: transparent;
   border-radius:0.8vw;
   border-width: 0.2vw;
   padding: 0.5vw;
-  margin-left: auto;
+  margin: 2.5vw 0 2vw 0;
+  width: 38vw;
 
 }
 
@@ -900,15 +909,17 @@ h5 {
 }
 
 .SummeB{
-  border-style: solid;
   border-radius:0.8vw;
-  border-color: lightgray;
-  border-width: 0.2vw;
-  padding: 1vw;
+  padding-left: 2vw;
+  padding-top: 1vw;
   margin-left: auto;
   margin-top: 2.5vw;
+  box-shadow: 2px 2px 5px #c5c5c5;
 }
 
+.payment {
+  margin-left: 1vw;
+}
 
 .grid-container{
   display: grid;
@@ -1021,10 +1032,19 @@ h5 {
   padding: 1vw;
   width: inherit;
   max-width: 38vw;
+  box-shadow: 2px 2px 5px #c5c5c5;
 }
 
 .sumBox {
   padding: 1vw;
+}
+
+.checkoutBox {
+  padding: 1vw;
+  width: inherit;
+  max-width: 38vw;
+  box-shadow: 2px 2px 5px #c5c5c5;
+  border-radius: 0.8vw;
 }
 
 .borderTop {

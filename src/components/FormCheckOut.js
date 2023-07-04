@@ -56,50 +56,66 @@ const FormCheckOut = () => {
     return (
         <div className="grid-container">
             <div className="formular grid1">
-                <p>
-                    <label>
+                <div>
+                    <p>Anrede:</p>
+                    <span>
                         <input className="input radioB"
                                type="radio"
                                name="option"
-                               value="Frau"
+                               value="Keine"
                                defaultChecked={true}
                         />
+                        <span className="qq">Keine</span>
+                    </span>
+                    <span>
+                        <input className="input radioB radioBMann"
+                               type="radio"
+                               name="option"
+                               value="Frau"
+                        />
                         <span className="qq">Frau</span>
-                    </label>
-                    <label>
+                    </span>
+                    <span>
                         <input className="input radioB radioBMann"
                                type="radio"
                                name="option"
                                value="Herr"
                         />
                         <span className="qq">Herr</span>
-                    </label>
-                </p>
-                <div className="bottomForm">
-                    <label className="firstNameLabel">
+                    </span>
+                </div>
+                <br/>
+                <div className="bottomForm flexSpaceBetween">
+                    <span className="nameInputs">
                         <p>Vorname:*</p>
                         <input className="input" type="text" defaultValue={user !== null? user.firstname : ""}/>
-                    </label>
-                    <label>
+                    </span>
+                    <span>
                         <p>Nachname:*</p>
                         <input className="input" type="text" defaultValue={user !== null? user.lastname : ""}/>
-                    </label>
+                    </span>
                 </div>
-                <p></p>
+                <br/>
 
-                <label className="firstNameLabel">
-                    <p> E-Mail:*</p>
-                    <input className="input" type="text" defaultValue={user !== null? user.email : ""}/>
-                </label>
+                <div className="flexSpaceBetween">
+                    <div className="emailTelInputs">
+                        <label htmlFor="email"> E-Mail:*</label>
+                        <br/>
+                        <input name="email" className="input" type="text" defaultValue={user !== null? user.email : ""}/>
+                    </div>
 
-                <label>
-                    <p className="telefonNr"> Telefonnummer:*</p>
-                    <input className="input" type="text" />
-                </label>
+                    <div>
+                        <label htmlFor="telefonNr"> Telefonnummer:*</label>
+                        <br/>
+                        <input name="telefonNr" className="input" type="text" />
+                    </div>
+                </div>
+
                 <p className="Pflichtfeld">*=Pflichtfelder</p>
 
                 <div className="SummeB">
                     <div className="Zahlungsart">Zahlungsart</div>
+                    <div className="payment">
                         <span>
                             <input className="input radioB"
                                    type="radio"
@@ -107,31 +123,32 @@ const FormCheckOut = () => {
                                    value="PayPal"
                             />
                         </span>
-                        <img className="bImage paypal" src={payPal} alt=""></img>
-                        <label>
+                        <img className="bImage paypal" src={payPal} alt="Paypal"></img>
+                        <span>
                             <input className="input radioB spaceLeft"
                                    type="radio"
                                    name="optionZ"
                                    value="Klarna"
                             />
-                            <img className="bImage" src={klarna} alt=""></img>
-                        </label>
-                        <label>
+                            <img className="bImage" src={klarna} alt="Klarna"></img>
+                        </span>
+                        <span>
                             <input className="input radioB spaceLeft"
                                    type="radio"
                                    name="optionZ"
                                    value="Visa"
                             />
-                            <img className="bImage visa" src={visa} alt=""></img>
-                        </label>
-                        <label>
+                            <img className="bImage visa" src={visa} alt="Visa Card"></img>
+                        </span>
+                        <span>
                             <input className="input radioB spaceLeft"
                                    type="radio"
                                    name="optionZ"
                                    value="MasterCard"
                             />
-                            <img className="bImage master" src={masterCard} alt=""></img>
-                        </label>
+                            <img className="bImage master" src={masterCard} alt="Mastercard"></img>
+                        </span>
+                    </div>
                 </div>
             </div>
             <div className="grid2 ">
@@ -140,16 +157,17 @@ const FormCheckOut = () => {
                     {
                         showCartContentList()
                     }
-                    <label className="Rabatt eventBox formBox sumBox" style={{display:'flex'}}>
+                    <div className="Rabatt checkoutBox formBox">
                         <div>
                             <h4> Rabatt </h4>
-                            <input className="input" type="text"/>
-                            <button className="keinButton notRegisteredLink applyDiscountLink"> Rabatt anwenden </button>
+                            <div className="flexSpaceBetween">
+                                <input className="input" type="text"/>
+                                <button className="keinButton notRegisteredLink applyDiscountLink"> Rabatt anwenden </button>
+                            </div>
                         </div>
 
-                    </label>
-                    <br/>
-                    <div className="eventBox formBox sumBox">
+                    </div>
+                    <div className="checkoutBox formBox sumBox">
                         <h4>Summe</h4>
                         <div className="Summe flexSpaceBetween">
                             <span>Bestellwert:</span> <span>{getCartTotal()}€</span>
