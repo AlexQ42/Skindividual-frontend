@@ -76,7 +76,7 @@ const EventListFilterContainer = () => {
             </div>
             <div className="filtersAndSearch">
                 <div className="searchContainer">
-                    <input className="search" ref={searchField} type="search" onInput={e => setSearchInput(e.currentTarget.value)}/>
+                    <input className="search" ref={searchField} type="search" placeholder="Titel suchen" onInput={e => setSearchInput(e.currentTarget.value)}/>
                     <button className="button searchButton" onClick={handleApply}><img src={search} alt="suchen"></img></button>
                 </div>
                 <select className="form-select form-select-sm dropdown" aria-label="Select event type" onChange={(e) => setEventTypeInput(e.target.value)}>

@@ -140,7 +140,7 @@ const FormCheckOut = () => {
                     {
                         showCartContentList()
                     }
-                    <label className="Rabatt eventBox sumBox" style={{display:'flex'}}>
+                    <label className="Rabatt eventBox formBox sumBox" style={{display:'flex'}}>
                         <div>
                             <h4> Rabatt </h4>
                             <input className="input" type="text"/>
@@ -149,7 +149,7 @@ const FormCheckOut = () => {
 
                     </label>
                     <br/>
-                    <div className="eventBox sumBox">
+                    <div className="eventBox formBox sumBox">
                         <h4>Summe</h4>
                         <div className="Summe flexSpaceBetween">
                             <span>Bestellwert:</span> <span>{getCartTotal()}€</span>
