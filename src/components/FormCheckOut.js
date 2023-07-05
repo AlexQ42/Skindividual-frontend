@@ -7,12 +7,7 @@ import masterCard from "../assets/MasterCard.svg"
 import {postOrder} from "../api/OrderAccessor";
 import {getCart, getCartTotal} from "../api/CartService";
 import {getUser} from "../api/UserAccessor";
-import EventBox from "./EventBox";
-import {get} from "axios";
-import Checkout from "../pages/Checkout";
 import CheckoutEventBox from "./CheckoutEventBox";
-//import Popup from 'reactjs-popup';
-
 
 
 

@@ -1,7 +1,6 @@
 import {useParams} from "react-router-dom";
 import React, {useEffect, useRef, useState} from "react";
 import {getEventByID} from "../api/EventAccessor";
-import imageMicroneedling from "../assets/imageMicroneedling.svg";
 import karte from "../assets/karte.svg";
 import SkinTypeTag from "../components/SkinTypeTag";
 import EventDescription from "../components/EventDescription";
