@@ -16,7 +16,7 @@ const Event =  () => {
     const [eventObject, setEventObject] = useState([]);
     const [ticketCounterValue, setTicketCounterValue] = useState(1);
     const ticketCounter = useRef(null);
-
+    const imageUrl = "../event"+eventObject.id+".jpg";
 
     useEffect(() => {
         function fetchData()
@@ -57,7 +57,7 @@ const Event =  () => {
             <br/>
             <div className="eventPageContent flexLeft">
                 <div className="eventImage">
-                    <img className="eventPageImage" src={imageMicroneedling} alt=""></img>
+                    <img className="eventPageImage" src={imageUrl} alt=""></img>
                 </div>
                 <div className="eventInfoContainer">
                     <h2>{eventObject.name}</h2>

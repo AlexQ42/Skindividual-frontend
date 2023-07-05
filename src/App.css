@@ -136,9 +136,6 @@ p {
   width: 10rem;
   border: 1px transparent;
   border-radius: 0.8vw 0 0 0.8vw;
-  background-image: url("https://img.freepik.com/free-photo/woman-home-applying-cream-mask_1303-24618.jpg?w=2000&t=st=1684417040~exp=1684417640~hmac=01266b91a9c6f9cd1c2f28008ee326adb6c6ce03a324a48c23867a6dbf752a57");
-  background-size: cover;
-  background-position: center;
 }
 
 .eventPageImage {

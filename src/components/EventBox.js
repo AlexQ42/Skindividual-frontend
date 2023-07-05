@@ -1,8 +1,8 @@
 import {useEffect, useState} from "react";
-import SkinTypeTag from "./SkinTypeTag";
-import EventReviewsAverageTag from "./EventReviewsAverageTag";
 import {Link} from "react-router-dom";
 import {calculateAverageRating} from "../api/EventAccessor";
+import SkinTypeTag from "./SkinTypeTag";
+import EventReviewsAverageTag from "./EventReviewsAverageTag";
 
 const EventBox = ({ eventObject }) => {
     const [resultEvent, setResultEvent] = useState([]);
@@ -13,10 +13,14 @@ const EventBox = ({ eventObject }) => {
 
     }, [eventObject]);
 
+    const image = "../event"+resultEvent.id+".jpg";
 
     return <div className="eventBox">
         <Link to={"/events/"+resultEvent.id} className="eventBoxLink flexLeft">
-            <div className="imageInBox"></div>
+            <div className="imageInBox" style={{
+                backgroundImage: `url(${image})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center"}}></div>
             <div className="eventBoxContent">
                 <div className="flexSpaceBetween">
                     <div>
