@@ -142,6 +142,7 @@ p {
   width: 45vw;
   margin-right: 2vw;
   margin-bottom: 2vw;
+  border-radius: 0.8vw;
 }
 
 .eventPageSubTitle {

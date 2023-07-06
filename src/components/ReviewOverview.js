@@ -5,7 +5,9 @@ const ReviewOverview = ({event}) => {
 
     const [reviews, setReviews] = useState([])
 
-    useEffect(() => setReviews(event.reviews ?? []))
+    useEffect(() => {
+        setReviews(event.reviews ?? [])
+    }, [reviews, event])
 
     function calculateReviewBar(stars)
     {
@@ -15,7 +17,11 @@ const ReviewOverview = ({event}) => {
             reviews.forEach(review => {
                 if(review.value === stars) counter++;
             });
-            return counter/reviews.length*100;
+            if(isNaN(counter/reviews.length*100))
+            {
+                return 0;
+            }
+            else return counter/reviews.length*100;
         }
     }
 
