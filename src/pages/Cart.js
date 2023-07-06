@@ -7,20 +7,10 @@ import AuthService from "../api/AuthService";
 
 const Cart =  () => {
 
-    const [cartTotal, setCartTotal] = useState(0)
-
-    useEffect(()=>{
-        const interval = setInterval(() => setCartTotal(getCartTotal()), 1000);
-    }, [])
-
     return (
         <div id="cartPage">
             <br/>
             <CartContent />
-            <br/>
-            <div className="flexSpaceBetween borderTop sumBox">
-                <span className="biggerText">Gesamtsumme: </span><span className="biggerText">{cartTotal}€</span>
-            </div>
             <div className="flexRight toCheckoutButton">
                 <Link to="/checkout" hidden={(getCart().length === 0 || AuthService.getCurrentUser() === null)}>
                     <button className="button headerButton">Zur Kasse</button>
