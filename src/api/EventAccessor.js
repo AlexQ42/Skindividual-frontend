@@ -2,11 +2,16 @@ import axiosInstance from "./AxiosInstance";
 
 export function getEventList(query)
 {
-    return axiosInstance.get(query).then((response) => {return response})
+    return axiosInstance.get(query).then(
+        (response) =>
+        {
+            return response;
+        })
 }
 
 export async function getEventByID(id)
-{   return axiosInstance.get('/events/'+id).then((response) =>
+{   return axiosInstance.get('/events/'+id).then(
+        (response) =>
         {
             return response.data;
         },
