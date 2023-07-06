@@ -17,7 +17,7 @@ const CartContent = () => {
 
     return (
         <div>
-            <img className="cartImg" src={cartThumbnail} alt=""></img>
+            <img className="cartImg" src={cartThumbnail} alt="Warenkorb"></img>
             {(cartObjects !== null && cartObjects.length !== 0)
                 ? cartObjects.map((object, i) => <CartEventItem key={i} event={object.event} amount={object.amount}></CartEventItem>)
                 : <p className="emptyListText">Gähnende Leere...</p>}
