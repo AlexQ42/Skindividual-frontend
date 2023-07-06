@@ -352,7 +352,7 @@ h5 {
 }
 
 #carousel3 {
-  background-image: url('assets/carousel3.svg');
+  background-image: url('assets/carousel3.png');
   background-size: cover;
   border-radius: 0.8vw;
 }
@@ -966,9 +966,12 @@ h5 {
 }
 
 .PicCart{
-  height: 15.5vw;
+  height: 15vw;
+  width: 17vw;
   margin: 0vw;
+  object-fit: cover;
   padding-left: 0vw;
+  border-radius: 0.8vw 0 0 0.8vw;
 }
 
 .eventBox2 {
@@ -1160,7 +1163,7 @@ h5 {
   }
 
   p, li, h4, .priceEventBox, .priceEventBox > span {
-    font-size: 3vw;
+    font-size: 2.5vw;
   }
 
   h3 {

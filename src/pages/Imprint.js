@@ -5,6 +5,7 @@ const Imprint =  () => {
 
     return (
         <div id="imprintPage">
+            <br/>
             <img src={imprintImage} className="imprintImage" alt=""/>
         </div>
     );

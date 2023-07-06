@@ -1,5 +1,4 @@
 import React from 'react';
-import ImgCart2 from "../assets/ImgCart2.svg";
 import SkinTypeTag from "./SkinTypeTag";
 import Counter from "./Counter";
 import bin from "../assets/bin.png";
@@ -13,6 +12,7 @@ const CartEventItem = ({event, amount}) => {
     const counterCallback = (counterValue) => {
         changeAmountInCart(event, counterValue);
     }
+    const imageUrl = "../event"+event.id+".jpg";
 
     function handleDelete()
     {
@@ -22,7 +22,7 @@ const CartEventItem = ({event, amount}) => {
 
     return (
     <div className="eventBox2 itemC">
-        <img className="PicCart " src={ImgCart2} alt=""></img>
+        <img className="PicCart " src={imageUrl} alt=""></img>
         <div className="flexSpaceBetween widthInherit">
             <Link to={"/events/"+event.id} className="heading noLink">
                 <h2>{event.name}</h2>
