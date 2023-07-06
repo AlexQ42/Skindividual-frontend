@@ -2,7 +2,7 @@ import React from 'react';
 import SkinTypeTag from "./SkinTypeTag";
 import Counter from "./Counter";
 import bin from "../assets/bin.png";
-import {changeAmountInCart, deleteFromCart} from "../api/CartService";
+import {changeAmountInCart} from "../api/CartService";
 import {Link} from "react-router-dom";
 
 

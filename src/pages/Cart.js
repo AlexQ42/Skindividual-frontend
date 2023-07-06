@@ -1,7 +1,6 @@
 import {Link} from "react-router-dom";
 import CartContent from "../components/CartContent";
-import {getCart, getCartTotal} from "../api/CartService";
-import React, {useEffect, useState} from "react";
+import {getCart} from "../api/CartService";
 import AuthService from "../api/AuthService";
 
 

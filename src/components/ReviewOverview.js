@@ -7,7 +7,7 @@ const ReviewOverview = ({event}) => {
 
     useEffect(() => {
         setReviews(event.reviews ?? [])
-    }, [reviews, event])
+    }, [event])
 
     function calculateReviewBar(stars)
     {
