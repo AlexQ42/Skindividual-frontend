@@ -12,7 +12,7 @@ const SkinTypeTestBanner2 = () => {
             </div>
             <div>
                 <Link className="button carouselButton" to="/Test">
-                    <span>zum Hauttyp-Test</span>
+                    <span>zum Hauttyptest</span>
                 </Link>
             </div>
         </div>

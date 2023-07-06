@@ -374,10 +374,16 @@ h5 {
   border-color: transparent;
 }
 
+.dropdown:hover {
+  background-color: #f6f6f6;
+  color: dimgrey;
+}
+
 .dateInput {
   width: 12vw;
   font-size: 1.2vw;
 }
+
 
 .dateDropdownButton {
   border-color: transparent;
@@ -394,6 +400,11 @@ h5 {
   border-color: transparent;
   background-color: #EDEDED;
   color: black;
+}
+
+.dateDropdownButton:hover {
+  background-color: #f6f6f6;
+  color: dimgrey;
 }
 
 .dateDropdownForm {

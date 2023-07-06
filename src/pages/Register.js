@@ -1,4 +1,4 @@
-import {useNavigate} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import {useRef, useState} from "react";
 import AuthService from "../api/AuthService";
 
@@ -142,9 +142,9 @@ const Register = () => {
               <option value="dry">trocken</option>
               <option value="sensitive">sensibel</option>
             </select>
-            <button className="button skinTypeTestButton">zum Hauttyptest</button>
-
+            <Link to="/test" className="button carouselButton skinTypeTestButton">Hauttyptest</Link>
             <div className="form-group flexCenter">
+              <br/>
               <button className="btn btn-primary btn-block button" onClick={handleRegister}>
                 <span>Registrieren</span>
               </button>
