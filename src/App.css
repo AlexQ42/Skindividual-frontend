@@ -99,7 +99,7 @@ p {
   box-shadow: 2px 2px 5px #c5c5c5;
   text-align: left;
   width: 45vw;
-  margin-bottom: 1vw;
+  margin-bottom: 2vw;
 }
 
 .eventBoxLink {
@@ -1045,6 +1045,7 @@ h5 {
   width: inherit;
   max-width: 38vw;
   box-shadow: 2px 2px 5px #c5c5c5;
+  margin-bottom: 1vw;
 }
 
 .sumBox {
