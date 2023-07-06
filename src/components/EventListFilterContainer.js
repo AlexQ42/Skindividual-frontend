@@ -1,4 +1,4 @@
-import {useRef, useState} from "react";
+import {useEffect, useRef, useState} from "react";
 import search from "../assets/search.png";
 import EventBoxListContainer from "./EventBoxListContainer";
 
@@ -16,6 +16,12 @@ const EventListFilterContainer = () => {
 
     const searchField = useRef(null);
     const skinTypeAllSelectButton = useRef(null)
+    const [enterPressed, setEnterPressed] = useState(false)
+
+    useEffect(() => {
+        handleApply();
+        setEnterPressed(false);
+    }, [skinTypeInput, enterPressed])
 
     function handleSkinTypeInput(input)
     {
@@ -57,7 +63,6 @@ const EventListFilterContainer = () => {
         e.target.setAttribute("min", min);
     }
 
-
     return (
         <div className="eventListFilterContainer">
             <div className="skinTypeFilter">
@@ -76,7 +81,7 @@ const EventListFilterContainer = () => {
             </div>
             <div className="filtersAndSearch">
                 <div className="searchContainer">
-                    <input className="search" ref={searchField} type="search" placeholder="Titel suchen" onInput={e => setSearchInput(e.currentTarget.value)}/>
+                    <input className="search" ref={searchField} type="search" placeholder="Titel suchen" onInput={e => setSearchInput(e.currentTarget.value)} onKeyDown={(e) => {if(e.key ==='Enter') setEnterPressed(true)}}/>
                     <button className="button searchButton" onClick={handleApply}><img src={search} alt="suchen"></img></button>
                 </div>
                 <select className="form-select form-select-sm dropdown" aria-label="Select event type" onChange={(e) => setEventTypeInput(e.target.value)}>
