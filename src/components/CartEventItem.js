@@ -7,18 +7,13 @@ import {Link} from "react-router-dom";
 
 
 
-const CartEventItem = ({event, amount}) => {
+const CartEventItem = ({event, amount, deleteCallback}) => {
 
     const counterCallback = (counterValue) => {
         changeAmountInCart(event, counterValue);
     }
     const imageUrl = "../event"+event.id+".jpg";
 
-    function handleDelete()
-    {
-        deleteFromCart(event);
-        window.location.reload();
-    }
 
     return (
     <div className="eventBox2 itemC">
@@ -37,7 +32,7 @@ const CartEventItem = ({event, amount}) => {
                     <div className="counter cartItemMargin">
                         <Counter initialValue={amount} counterCallback={counterCallback} upperLimit={event.availableSpots ?? 1}/>
                     </div>
-                    <button className="button"><img onClick={() => handleDelete()} className="buttonImage buttonImageNoMargin" src={bin} alt="löschen"></img></button>
+                    <button className="button"><img onClick={() => deleteCallback(event)} className="buttonImage buttonImageNoMargin" src={bin} alt="löschen"></img></button>
                     <h4 className="priceEventBox counter">{event.price}€ <span>/ Person</span> </h4>
                 </div>
             </div>
