@@ -46,9 +46,8 @@ This website was developed as a team project. I would like to say thanks to my f
 - Mai Linh Phung
 - [Lia Schaarschmidt](https://github.com/Auriko10)
 - [Marina Waller](https://github.com/marinaWaller)
-<br>
 
 ## Contact
 
-If you have any questions, feel free to contact me. I will answer as fast as I can.
+If you have any questions about this project, feel free to contact me. I will answer as fast as I can.
 
