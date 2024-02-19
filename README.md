@@ -2,11 +2,13 @@
 
 "Skindividual" is a fictional online shop created for a university team project. The shop sells tickets for events and individual appointments dealing with skincare and wellness in Germany.
 The website's frontend is written in JavaScript as a single-page-application using the React framework. The design was developed and tested as a Figma prototype before implementing.
+<br>
 
 ## How to use
 
 1. Execute command `npm install`
 2. Execute command `npm start`
+<br>
 
 ## Impressions
 
