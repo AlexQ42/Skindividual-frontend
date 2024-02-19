@@ -37,3 +37,16 @@ The website also offers an online test where customers can determine their own s
 </p>
 <br>
 
+## Developers
+
+This website was developed as a team project. I would like to say thanks to my fellow team members:
+
+- Mai Linh Phung
+- [Lia Schaarschmidt](https://github.com/Auriko10)
+- [Marina Waller](https://github.com/marinaWaller)
+<br>
+
+## Contact
+
+If you have any questions, feel free to contact me. I will answer as fast as I can.
+
