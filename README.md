@@ -50,6 +50,12 @@ This website was developed as a team project. I would like to say thanks to my f
 - [Marina Waller](https://github.com/marinaWaller)
 <br>
 
+## External Content
+
+The pictures and icons used in this project were found on [Freepik](https://www.freepik.com/) and [Flaticon](https://www.flaticon.com/).
+<br>
+<br>
+
 ## Contact
 
 If you have any questions about this project, feel free to contact me. I will answer as fast as I can.
