@@ -56,6 +56,7 @@ This website was developed as a team project. I would like to say thanks to my f
 ## External Content
 
 The pictures and icons used in this project were found on [Freepik](https://www.freepik.com/) and [Flaticon](https://www.flaticon.com/).
+The questions of the skintype test were taken from [Ratgeber Hautgesundheit](https://www.ratgeber-hautgesundheit.de/haut/hauttypen/test-hauttyp/).
 <br>
 <br>
 
