@@ -20,10 +20,8 @@ The front page of the website features a gallery showing the company's values. B
 <img src="https://github.com/alexandrawaas/Skindividual-frontend/blob/main/screenshots/Bildschirmfoto%202024-02-19%20um%2010.16.43.png" width="80%" padding="10px 10px 10px 10px">
    <br>
    <br>
+<img src="https://github.com/alexandrawaas/Skindividual-frontend/blob/main/screenshots/Skindividual-Demo-Filter.gif" width="80%" padding="10px 10px 10px 10px">
 </p>
-
-   https://github.com/alexandrawaas/Skindividual-frontend/assets/112758102/4f3a996a-3088-486a-baf2-d1a0489884d8
-   
 <br>
 
 Each skincare event has its own info page. There, the desired amount of tickets can be added to the cart. 
